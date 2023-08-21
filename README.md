@@ -6,7 +6,7 @@ Salut ! Je m'appelle **Tom** et je suis actuellement **étudiant en informatique
 
 Je suis passionné par le **développement** et la **programmation**, j'ai donc choisi de me spécialiser dans le **développement web** et l'**informatique en général**.
 
-En parallèle de mes études, je travaille sur la **création de sites web** et de **bot Discord**. Cela me permet d'appliquer mes **connaissances acquises** en cours et de travailler sur des **projets concrets** afin d'**approfondir mes compétences**.
+En parallèle de mes études, je travaille sur la **création de sites web** et de **programmes**. Cela me permet d'appliquer mes **connaissances acquises** en cours et de travailler sur des **projets concrets** afin d'**approfondir mes compétences**.
 
 ## 📺 Compétences
 ![JavaScript](https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript)
