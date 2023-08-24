@@ -21,13 +21,46 @@ html {
 }
 
 body {
-  width: auto;
-  height: auto;
-  margin: 4% 4% 0 4%;
+  width: 100%;
+  height: 100%;
   background-color: var(--main-color);
 }
 
+section.plateform_warning {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+i.warning-icon {
+  font-size: 500px;
+  color: var(--four-color);
+}
+
+p.titre_warning {
+  font-size: 40px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #a0a0a0;
+}
+
+img[src="img/photo.png"] {
+  display: none;
+}
+
+h1.nom {
+  display: none;
+}
+
+p.role {
+  display: none;
+}
+
+div.bloc {
+  display: none;
+}
 
 /*
 font-family: 'Plus Jakarta Sans', sans-serif;
@@ -47,13 +80,24 @@ font-family: 'Righteous', cursive;
 
 /* Ordinateur portable */
 @media (min-width: 1201px) and (max-width: 1600px) {
-  body {
-    background-color: red;
+  section.plateform_warning {
+    display: none;
   }
 }
 
 /* Ordinateur de bureau */
 @media (min-width: 1601px) {
+  body {
+    width: auto;
+    height: auto;
+    margin: 4% 4% 0 4%;
+    background-color: var(--main-color);
+  }
+
+  section.plateform_warning {
+    display: none;
+  }
+
   div.content {
     display: flex;
     flex-direction: row;
@@ -86,6 +130,7 @@ font-family: 'Righteous', cursive;
   }
 
   img[src="img/photo.png"] {
+    display: block;
     width: 65%;
     height: 100%;
     pointer-events: none;
@@ -94,6 +139,7 @@ font-family: 'Righteous', cursive;
   }
 
   h1.nom {
+    display: block;
     font-family: 'Righteous', cursive;
     color: white;
     letter-spacing: 2px;
@@ -101,6 +147,7 @@ font-family: 'Righteous', cursive;
   }
 
   p.role {
+    display: block;
     font-family: 'Aoboshi One', serif;
     color: white;
     font-size: small;
