@@ -27,6 +27,8 @@ body {
   background-color: var(--main-color);
 }
 
+
+
 /*
 font-family: 'Plus Jakarta Sans', sans-serif;
 font-family: 'Aoboshi One', serif;
@@ -80,12 +82,14 @@ font-family: 'Righteous', cursive;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: white;
     background: linear-gradient(#595959, #515151);
+    margin-bottom: -20px;
   }
 
   img[src="img/photo.png"] {
     width: 65%;
     height: 100%;
     pointer-events: none;
+    user-select: none;
     transform: scaleX(-1);
   }
 
@@ -93,6 +97,7 @@ font-family: 'Righteous', cursive;
     font-family: 'Righteous', cursive;
     color: white;
     letter-spacing: 2px;
+    margin-bottom: -40px;
   }
 
   p.role {
