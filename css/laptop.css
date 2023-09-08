@@ -1,0 +1,139 @@
+/* Laptop screen */
+@media (min-width: 1201px) and (max-width: 1600px) {
+    body {
+      width: auto;
+      height: auto;
+      margin: 4% 4% 0 4%;
+      background-color: var(--main-color);
+    }
+  
+    section.plateform_warning {
+      display: none;
+    }
+  
+    div.content {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+    
+    div.contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 30%;
+      height: auto;
+      margin-right: 25px;
+      padding-top: 50px;
+      background-color: var(--seco-color);
+    }
+    
+    div.photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 200px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: white;
+      background: linear-gradient(#595959, #515151);
+      margin-bottom: -20px;
+    }
+  
+    img[src="img/photo.png"] {
+      display: block;
+      width: 65%;
+      height: 100%;
+      pointer-events: none;
+      user-select: none;
+      transform: scaleX(-1);
+    }
+  
+    h1.nom {
+      display: block;
+      font-family: 'Righteous', cursive;
+      color: white;
+      letter-spacing: 2px;
+      margin-bottom: -40px;
+    }
+  
+    p.role {
+      display: block;
+      font-family: 'Aoboshi One', serif;
+      color: white;
+      font-size: small;
+      padding: 2px 15px 2px 15px;
+      border-radius: 5px;
+      background-color: #434344;
+    }
+    
+    div.about-me {
+      width: 70%;
+      height: 100%;
+      background-color: var(--seco-color);
+    }
+    
+    div.bord {
+      border: 1px solid var(--thir-color);
+      border-radius: 20px;
+    }
+  
+    div.ligne {
+      border: 1px solid #414142;
+      width: 80%;
+    }
+  
+    div.contact_informations {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      height: 20px;
+    }
+  
+    i.bx {
+      font-size: 22px;
+      color: var(--four-color);
+    }
+  
+    div.logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: linear-gradient(#262627, #515151);
+    }
+  
+    div.logo:hover {
+      border: 1px solid #3a3a3a;
+      background-color: var(--main-color);
+    }
+  
+    a {
+      text-decoration: none;
+    }
+  
+    div.texte {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: auto;
+      height: 100%;
+      padding-left: 5%;
+    }
+  
+    p.titre {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #a0a0a0;
+      font-size: x-small;
+    }
+  
+    p.lien {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: white;
+      font-weight: 800;
+    }
+}
