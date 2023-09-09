@@ -56,16 +56,6 @@ div.content {
   font-family: 'Righteous', cursive;
 */
 
-/* Téléphone */
-@media (max-width: 600px) {
-  
-}
-
-/* Tablette */
-@media (max-width: 1200px) {
-  
-}
-
 /* Barre de défilement */
 ::-webkit-scrollbar {
   width: 12px;
