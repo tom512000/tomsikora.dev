@@ -175,9 +175,40 @@
       border-bottom: 2px solid var(--four-color);
       opacity: 0;
       transition: opacity 0.3s;
-  }
-  
-  div.menu h4:hover::after {
+    }
+    
+    div.menu h4:hover::after {
       opacity: 1;
-  }
+    }
+
+    div.about-me h1 {
+      font-family: 'Righteous', cursive;
+      color: white;
+      letter-spacing: 2px;
+      margin-top: 35px;
+    }
+
+    div.about-me h1, div.about-me p, div.about-me-ligne {
+      margin-left: 35px;
+      margin-right: 35px;
+    }
+
+    div.about-me-ligne {
+      border: 3px solid var(--four-color);
+      width: 40px;
+      border-radius: 3px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    div.about-me p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: larger;
+      text-align: justify;
+      color: #A9A9A9;
+    }
+
+    div.about-me p a {
+      color: var(--four-color);
+    }
 }
