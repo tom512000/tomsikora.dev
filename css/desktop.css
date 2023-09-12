@@ -142,4 +142,42 @@
       color: white;
       font-weight: 800;
     }
+
+    div.menu {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 50%;
+      height: 70px;
+      float: right;
+      border-radius: 0 20px 0 20px;
+      font-family: 'Jost', sans-serif;
+      color: #A9A9A9;
+      background-color: var(--thir-color);
+    }
+
+    div.menu h4 {
+      cursor: pointer;
+      position: relative;
+    }
+
+    div.menu h4:hover {
+      cursor: pointer;
+      color: var(--four-color);
+    }
+
+    div.menu h4::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      border-bottom: 2px solid var(--four-color);
+      opacity: 0;
+      transition: opacity 0.3s;
   }
+  
+  div.menu h4:hover::after {
+      opacity: 1;
+  }
+}
