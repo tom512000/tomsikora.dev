@@ -59,7 +59,7 @@
       margin-bottom: -40px;
     }
   
-    div.role {
+    p.role {
       display: block;
       width: 50px;
       font-family: 'Aoboshi One', serif;
@@ -188,7 +188,8 @@
       margin-top: 35px;
     }
 
-    div.about-me h1, div.about-me p, div.about-me-ligne {
+    div.about-me h1, div.about-me p, 
+      div.about-me-ligne, div.diplomes {
       margin-left: 35px;
       margin-right: 35px;
     }
@@ -210,5 +211,81 @@
 
     div.about-me p a {
       color: var(--four-color);
+    }
+
+    div.diplomes {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      height: 150px;
+    }
+
+    div.diplome {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      margin: 30px;
+      border-radius: 20px;
+      background-color: #292929;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 1s ease-in-out;
+    }
+
+    .diplome:hover {
+      animation: inclinaison 1s ease-in-out 1;
+    }
+
+    @keyframes inclinaison {
+      0% {
+        transform: rotate(0deg);
+      } 25% {
+        transform: rotate(-2deg);
+      } 75% {
+        transform: rotate(2deg);
+      } 100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    div.diplome-bloc {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div.diplome p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: smaller;
+      color: #A9A9A9;
+    }
+
+    div.diplome h2 {
+      font-family: 'Jost', sans-serif;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    div.mention {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      background-color: var(--four-color);
+    }
+
+    div.mention p {
+      width: 100%;
+      height: 100%;
+      font-size: large;
+      color: black;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .espace {
+      padding-top: 40px;
     }
 }
