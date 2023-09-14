@@ -285,7 +285,30 @@
       font-family: 'Jost', sans-serif;
     }
 
-    .espace {
-      padding-top: 40px;
-    }
+    .jauge {
+      width: 200px;
+      height: 17px;
+      background-color: #292929;
+      border: 7px solid #292929;
+      position: relative;
+      border-radius: 10px;
+  }
+
+  .niveau {
+      height: 100%;
+      background-color: var(--four-color);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+  }
+
+  .label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: smaller;
+      font-family: 'Jost', sans-serif;
+      transform: translate(-50%, -50%);
+  }
 }
