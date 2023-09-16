@@ -332,6 +332,7 @@
       border: 7px solid #292929;
       position: relative;
       border-radius: 20px;
+      cursor: pointer;
     }
 
     div.niveau {
@@ -341,7 +342,6 @@
       top: 0;
       left: 0;
       border-radius: 10px;
-      cursor: pointer;
     }
 
     div.niveau:hover {
