@@ -143,6 +143,16 @@
       font-weight: 800;
     }
 
+    p.lien button {
+      padding: 1px 7px 1px 7px;
+      margin-top: 4px;
+      border: none;
+      border-radius: 20px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      background-color : var(--four-color);
+    }
+
     div.menu {
       display: flex;
       justify-content: space-evenly;
