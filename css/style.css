@@ -21,6 +21,7 @@ html {
     height: auto;
     scroll-behavior: smooth;
     text-decoration: none;
+    cursor: grab;
 }
 
 body {

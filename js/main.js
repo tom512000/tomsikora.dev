@@ -1,3 +1,4 @@
+// Affiche le mail et le numéro de téléphone
 function numero(x){
     x.parentNode.innerHTML = "06 26 88 83 79";
 }
