@@ -5,3 +5,14 @@ function numero(x){
 function mail(x){
     x.parentNode.innerHTML = "tom.sikora03@gmail.com";
 }
+
+const screen = document.querySelector('html');
+screen.addEventListener('mousedown', (event) => {
+    if (event.button === 0) {
+        screen.style.cursor = 'grabbing';
+    }
+});
+
+screen.addEventListener('mouseup', () => {
+    screen.style.cursor = 'grab';
+});
