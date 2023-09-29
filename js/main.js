@@ -6,6 +6,7 @@ function mail(x){
     x.parentNode.innerHTML = "tom.sikora03@gmail.com";
 }
 
+// Change de curseur en fonction du clic
 const screen = document.querySelector('html');
 screen.addEventListener('mousedown', (event) => {
     if (event.button === 0) {
