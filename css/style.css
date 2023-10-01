@@ -24,6 +24,11 @@
   padding: 0;
 }
 
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
 html {
   width: 100%;
   height: auto;
@@ -77,8 +82,6 @@ div.photo {
 img[src="img/photo.png"] {
   width: 65%;
   height: 100%;
-  pointer-events: none;
-  user-select: none;
   transform: scaleX(-1);
 }
 
@@ -237,7 +240,7 @@ div.about-me h1 {
 
 div.about-me h1, div.about-me p, 
   div.about-me-ligne, div.diplomes,
-  div.competences {
+  div.competences, div.logicielsoutils {
   margin-left: 35px;
   margin-right: 35px;
 }
@@ -395,6 +398,62 @@ span.label {
   font-family: 'Jost', sans-serif;
   transform: translate(-50%, -50%);
 }
+
+div.logicielsoutils {
+  height: 195px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div.logicielsoutils_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 50%;
+}
+
+div.logicielsoutils_title_bloc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -35px;
+}
+
+div.logicielsoutils_title_bloc h1 {
+  margin-bottom: -10px;
+}
+
+div.logicielsoutils_title_bloc div.about-me-ligne {
+  width: 80px;
+  margin-bottom: 50px;
+}
+
+div.logicielsoutils_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 50%;
+}
+
+div.logicielsoutils_content_bloc {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--thir-color);
+}
+
+div.logicielsoutils_content_bloc img {
+  height: 80px;
+  padding: 15px;
+}
+
+
+
+
 
 
 
