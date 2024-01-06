@@ -211,11 +211,6 @@ div.menu h4 {
   position: relative;
 }
 
-div.menu h4:hover {
-  cursor: pointer;
-  color: var(--four-color);
-}
-
 div.menu h4::after {
   content: '';
   position: absolute;
@@ -229,6 +224,15 @@ div.menu h4::after {
 
 div.menu h4:hover::after {
   opacity: 1;
+}
+
+div.menu h4 a {
+  text-decoration: none;
+  color: #A9A9A9;
+}
+
+div.menu h4 a:hover {
+  color: var(--four-color);
 }
 
 div.about-me h1 {
