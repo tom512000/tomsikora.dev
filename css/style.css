@@ -524,7 +524,7 @@ div.carousel-item > img {
 }
 
 div.carousel-item:hover > img {
-  filter: blur(5px);
+  filter: blur(6px);
 }
 
 div.carousel-item > div.item-text {
@@ -544,21 +544,60 @@ div.item-text > h2 {
   font-family: 'DM Sans', sans-serif;
   font-weight: bold;
   font-size: 40px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow:
+    -1px -1px 1px rgba(0, 0, 0, 0.5),
+    1px -1px 1px rgba(0, 0, 0, 0.5),
+    -1px 1px 1px rgba(0, 0, 0, 0.5),
+    1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+div.item-text > h2 > a {
   color: white;
+}
+
+div.item-text > h2 > a:hover {
+  color: var(--four-color);
 }
 
 div.item-text > p {
   width: 75%;
   margin: 0;
   font-size: 22px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow:
+    -1px -1px 1px rgba(0, 0, 0, 0.5),
+    1px -1px 1px rgba(0, 0, 0, 0.5),
+    -1px 1px 1px rgba(0, 0, 0, 0.5),
+    1px 1px 1px rgba(0, 0, 0, 0.5);
   color: white;
 }
 
 div.item-langages {
   display: flex;
   width: 75%;
+  margin-top: 30px;
+}
+
+div.item-langages > h3 {
+  margin-right: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  text-shadow:
+    -1px -1px 1px rgba(0, 0, 0, 0.5),
+    1px -1px 1px rgba(0, 0, 0, 0.5),
+    -1px 1px 1px rgba(0, 0, 0, 0.5),
+    1px 1px 1px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+div.item-langages > p {
+  margin: 0 15px 0 0;
+  padding: 1px 7px 1px 7px;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Jost', sans-serif;
+  font-size: 18px;
+  color: black;
+  background-color : var(--four-color);
 }
 
 

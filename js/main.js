@@ -17,3 +17,22 @@ screen.addEventListener('mousedown', (event) => {
 screen.addEventListener('mouseup', () => {
     screen.style.cursor = 'grab';
 });
+
+// Gestion du carrousel
+let currentIndex = 0;
+const totalItems = document.querySelectorAll('.carousel-item').length;
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateCarousel();
+}
+
+function updateCarousel() {
+    const translateValue = -currentIndex * 100 + '%';
+    document.querySelector('.carousel-inner').style.transform = 'translateX(' + translateValue + ')';
+}
