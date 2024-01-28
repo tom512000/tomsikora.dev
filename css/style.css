@@ -345,7 +345,7 @@ div.mention p {
 div.competences {
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
+  height: 350px;
 }
 
 div.competence {
@@ -407,7 +407,7 @@ span.label {
 
 div.logicielsoutils {
   height: 195px;
-  margin-top: 20px;
+  margin-top: 110px;
   margin-bottom: 70px;
 }
 
