@@ -64,6 +64,7 @@ div.contact {
   height: 800px;
   margin-right: 25px;
   padding-top: 50px;
+  padding-bottom: 50px;
   background-color: var(--seco-color);
 }
 
@@ -130,7 +131,7 @@ div.contact_informations:hover {
   transform: translateX(5px);
 }
 
-i.bx {
+a > i.bx {
   font-size: 22px;
   color: var(--four-color);
 }
@@ -273,6 +274,7 @@ div.diplomes {
   flex-direction: row;
   width: auto;
   height: 150px;
+  margin-bottom: 75px;
 }
 
 div.diplome {
@@ -406,7 +408,7 @@ span.label {
 div.logicielsoutils {
   height: 195px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
 }
 
 div.logicielsoutils_title {
@@ -454,6 +456,114 @@ div.logicielsoutils_content_bloc img {
   height: 80px;
   padding: 15px;
 }
+
+div.realisations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  margin-bottom: 35px;
+}
+
+div.carousel {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #171717;
+}
+
+div.carousel-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+button.carousel-button {
+  width: 10%;
+  height: 100%;
+  top: 50%;
+  position: absolute;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+button.carousel-prev {
+  left: 0;
+}
+
+button.carousel-next {
+  right: 0;
+}
+
+button > i.bx {
+  color: #A9A9A9;
+  font-size: 60px;
+}
+
+div.carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  filter: blur(0px);
+}
+
+div.carousel-item > img {
+  height: 100%;
+  position: absolute;
+  transition: filter 0.3s ease;
+}
+
+div.carousel-item:hover > img {
+  filter: blur(5px);
+}
+
+div.carousel-item > div.item-text {
+  display: none;
+  position: absolute;
+}
+
+div.carousel-item:hover > div.item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.item-text > h2 {
+  margin-bottom: 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+div.item-text > p {
+  width: 75%;
+  margin: 0;
+  font-size: 22px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+div.item-langages {
+  display: flex;
+  width: 75%;
+}
+
+
+
+
 
 
 
