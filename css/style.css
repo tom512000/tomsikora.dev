@@ -64,7 +64,7 @@ div.contact {
   height: 800px;
   margin-right: 25px;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   background-color: var(--seco-color);
 }
 
@@ -131,7 +131,7 @@ div.contact_informations:hover {
   transform: translateX(5px);
 }
 
-a > i.bx {
+a > i.bx, button > i.bx {
   font-size: 22px;
   color: var(--four-color);
 }
@@ -146,12 +146,18 @@ div.logo {
   background-color: linear-gradient(#262627, #515151);
 }
 
-div.logo a {
+div.logo a, div.logo > button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
+}
+
+div.logo > button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 div.logo:hover {
@@ -501,7 +507,7 @@ button.carousel-next {
   right: 0;
 }
 
-button > i.bx {
+button.carousel-button > i.bx {
   color: #A9A9A9;
   font-size: 60px;
 }

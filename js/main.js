@@ -36,3 +36,8 @@ function updateCarousel() {
     const translateValue = -currentIndex * 100 + '%';
     document.querySelector('.carousel-inner').style.transform = 'translateX(' + translateValue + ')';
 }
+
+// Bouton d'impression
+function printPage() {
+    window.print();
+}
