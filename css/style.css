@@ -330,6 +330,7 @@ div.diplome h2 {
   font-family: 'Jost', sans-serif;
   letter-spacing: 2px;
   color: white;
+  cursor: pointer;
 }
 
 div.mention {
