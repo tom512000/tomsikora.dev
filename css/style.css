@@ -1,15 +1,15 @@
+/*
+  Projet : Portfolio numérique
+  Description : Réalisation de mon portfolio numérique
+  Version : 2.0
+  Auteur : Tom SIKORA
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap');
-
-:root {
-  --main-color: #171717; /* Couleur 1 : Noir */
-  --seco-color: #303031; /* Couleur 2 : Gris foncé */
-  --thir-color: #414141; /* Couleur 3 : Gris clair */
-  --four-color: #9DE62F; /* Couleur 4 : Vert clair */
-}
 
 /*
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -18,6 +18,14 @@
   font-family: 'Jost', sans-serif;
   font-family: 'DM Sans', sans-serif;
 */
+
+/* CSS global */
+:root {
+  --color-black: #171717; /* Couleur 1 : Noir */
+  --color-dark-gray: #303031; /* Couleur 2 : Gris foncé */
+  --color-light-gray: #414141; /* Couleur 3 : Gris clair */
+  --color-light-green: #9DE62F; /* Couleur 4 : Vert clair */
+}
 
 * {
   margin: 0;
@@ -29,32 +37,48 @@ img {
   user-select: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* CSS Éléments */
 html {
   width: 100%;
-  height: auto;
   scroll-behavior: smooth;
-  text-decoration: none;
   cursor: grab;
 }
 
 body {
-  width: auto;
-  height: auto;
   margin: 4% 4% 4% 4%;
-  background-color: var(--main-color);
+  background-color: var(--color-black);
 }
 
-section.plateform_warning {
+/* Barre de défilement */
+::-webkit-scrollbar {
+  width: 12px;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-dark-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* div warning plateforme */
+div.plateform_warning {
   display: none;
 }
 
+/* div contenu principal */
 div.content {
   display: flex;
-  flex-direction: row;
   width: 100%;
-  height: auto;
 }
 
+/* div informations personnelles */
 div.contact {
   display: flex;
   flex-direction: column;
@@ -65,7 +89,12 @@ div.contact {
   margin-right: 25px;
   padding-top: 50px;
   padding-bottom: 20px;
-  background-color: var(--seco-color);
+  background-color: var(--color-dark-gray);
+}
+
+div.bord {
+  border: 1px solid var(--color-light-gray);
+  border-radius: 20px;
 }
 
 div.photo {
@@ -80,7 +109,7 @@ div.photo {
   margin-bottom: -20px;
 }
 
-img[src="img/photo.png"] {
+div.photo > img {
   width: 65%;
   height: 100%;
   transform: scaleX(-1);
@@ -93,7 +122,7 @@ h1.nom {
   margin-bottom: -40px;
 }
 
-p.role {
+p.statut {
   width: 50px;
   font-family: 'Aoboshi One', serif;
   color: white;
@@ -101,17 +130,6 @@ p.role {
   padding: 2px 15px 2px 15px;
   border-radius: 5px;
   background-color: #434344;
-}
-
-div.about-me {
-  width: 80%;
-  height: auto;
-  background-color: var(--seco-color);
-}
-
-div.bord {
-  border: 1px solid var(--thir-color);
-  border-radius: 20px;
 }
 
 div.ligne {
@@ -133,7 +151,7 @@ div.contact_informations:hover {
 
 a > i.bx, button > i.bx {
   font-size: 22px;
-  color: var(--four-color);
+  color: var(--color-light-green);
 }
 
 div.logo {
@@ -162,18 +180,13 @@ div.logo > button {
 
 div.logo:hover {
   border: 1px solid #3a3a3a;
-  background-color: var(--main-color);
-}
-
-a {
-  text-decoration: none;
+  background-color: var(--color-black);
 }
 
 div.texte {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: auto;
   height: 100%;
   padding-left: 5%;
 }
@@ -197,58 +210,11 @@ p.lien button {
   border-radius: 20px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
-  background-color : var(--four-color);
+  background-color : var(--color-light-green);
   cursor: pointer;
 }
 
-div.menu {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 50%;
-  height: 70px;
-  float: right;
-  border-radius: 0 20px 0 20px;
-  font-family: 'Jost', sans-serif;
-  color: #A9A9A9;
-  background-color: var(--thir-color);
-}
-
-div.menu h4 {
-  position: relative;
-}
-
-div.menu h4::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  border-bottom: 2px solid var(--four-color);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-div.menu h4:hover::after {
-  opacity: 1;
-}
-
-div.menu h4 a {
-  text-decoration: none;
-  color: #A9A9A9;
-}
-
-div.menu h4 a:hover {
-  color: var(--four-color);
-}
-
-div.about-me h1 {
-  font-family: 'Righteous', cursive;
-  color: white;
-  letter-spacing: 2px;
-  margin-top: 35px;
-}
-
+/* div A propos de moi */
 div.about-me h1, div.about-me p, 
   div.about-me-ligne, div.diplomes,
   div.competences, div.logicielsoutils {
@@ -256,12 +222,16 @@ div.about-me h1, div.about-me p,
   margin-right: 35px;
 }
 
-div.about-me-ligne {
-  border: 3px solid var(--four-color);
-  width: 40px;
-  border-radius: 3px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+div.about-me {
+  width: 80%;
+  background-color: var(--color-dark-gray);
+}
+
+div.about-me h1 {
+  font-family: 'Righteous', cursive;
+  color: white;
+  letter-spacing: 2px;
+  margin-top: 35px;
 }
 
 div.about-me p {
@@ -272,13 +242,62 @@ div.about-me p {
 }
 
 div.about-me p a {
-  color: var(--four-color);
+  color: var(--color-light-green);
 }
 
+div.about-me-ligne {
+  border: 3px solid var(--color-light-green);
+  width: 40px;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* div menu ancres */
+div.menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  height: 70px;
+  float: right;
+  border-radius: 0 20px 0 20px;
+  font-family: 'Jost', sans-serif;
+  color: #A9A9A9;
+  background-color: var(--color-light-gray);
+}
+
+div.menu > h4 {
+  position: relative;
+}
+
+div.menu > h4::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid var(--color-light-green);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+div.menu > h4:hover::after {
+  opacity: 1;
+}
+
+div.menu > h4 > a {
+  text-decoration: none;
+  color: #A9A9A9;
+}
+
+div.menu > h4 > a:hover {
+  color: var(--color-light-green);
+}
+
+/* div diplômes */
 div.diplomes {
   display: flex;
-  flex-direction: row;
-  width: auto;
   height: 150px;
   margin-bottom: 75px;
 }
@@ -293,11 +312,11 @@ div.diplome {
   margin: 30px;
   border-radius: 20px;
   background-color: #292929;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.5);
   transition: transform 1s ease-in-out;
 }
 
-.diplome:hover {
+div.diplome:hover {
   animation: inclinaison 1s ease-in-out 1;
 }
 
@@ -313,11 +332,11 @@ div.diplome {
   }
 }
 
-div.diplome-bloc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+div.diplome h2 {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 2px;
+  color: white;
+  cursor: pointer;
 }
 
 div.diplome p {
@@ -326,11 +345,11 @@ div.diplome p {
   color: #A9A9A9;
 }
 
-div.diplome h2 {
-  font-family: 'Jost', sans-serif;
-  letter-spacing: 2px;
-  color: white;
-  cursor: pointer;
+div.diplome-bloc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 div.mention {
@@ -338,10 +357,10 @@ div.mention {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  background-color: var(--four-color);
+  background-color: var(--color-light-green);
 }
 
-div.mention p {
+div.mention > p {
   width: 100%;
   height: 100%;
   font-size: large;
@@ -349,6 +368,7 @@ div.mention p {
   font-family: 'Jost', sans-serif;
 }
 
+/* div competences */
 div.competences {
   display: flex;
   flex-wrap: wrap;
@@ -364,7 +384,7 @@ div.competence {
   height: calc(100% / 4);
 }
 
-div.competence h3 {
+div.competence > h3 {
   font-family: 'Jost', sans-serif;
   letter-spacing: 2px;
   color: white;
@@ -382,7 +402,7 @@ div.jauge {
 
 div.niveau {
   height: 100%;
-  background-color: var(--four-color);
+  background-color: var(--color-light-green);
   position: absolute;
   top: 0;
   left: 0;
@@ -412,6 +432,7 @@ span.label {
   transform: translate(-50%, -50%);
 }
 
+/* div logiciels et outils */
 div.logicielsoutils {
   height: 195px;
   margin-top: 110px;
@@ -420,7 +441,6 @@ div.logicielsoutils {
 
 div.logicielsoutils_title {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   width: 100%;
@@ -435,35 +455,35 @@ div.logicielsoutils_title_bloc {
   margin-left: -35px;
 }
 
-div.logicielsoutils_title_bloc h1 {
+div.logicielsoutils_title_bloc > h1 {
   margin-bottom: -10px;
 }
 
-div.logicielsoutils_title_bloc div.about-me-ligne {
+div.logicielsoutils_title_bloc > div {
   width: 80px;
   margin-bottom: 50px;
 }
 
 div.logicielsoutils_content {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   width: 100%;
   height: 50%;
 }
 
-div.logicielsoutils_content_bloc {
+div.logicielsoutils_content > div {
   display: flex;
   align-items: center;
   border-radius: 10px;
-  background-color: var(--thir-color);
+  background-color: var(--color-light-gray);
 }
 
-div.logicielsoutils_content_bloc img {
+div.logicielsoutils_content > div > img {
   height: 80px;
   padding: 15px;
 }
 
+/* div réalisations */
 div.realisations {
   display: flex;
   justify-content: center;
@@ -472,6 +492,7 @@ div.realisations {
   margin-bottom: 35px;
 }
 
+/* div carrousel */
 div.carousel {
   width: 90%;
   height: 90%;
@@ -563,7 +584,7 @@ div.item-text > h2 > a {
 }
 
 div.item-text > h2 > a:hover {
-  color: var(--four-color);
+  color: var(--color-light-green);
 }
 
 div.item-text > p {
@@ -604,19 +625,8 @@ div.item-langages > p {
   font-family: 'Jost', sans-serif;
   font-size: 18px;
   color: black;
-  background-color : var(--four-color);
+  background-color : var(--color-light-green);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Desktop screen */
 @media (min-width: 1601px) {
@@ -628,15 +638,14 @@ div.item-langages > p {
   
 }
 
-/* tablet screen */
+/* Tablet screen */
 @media (max-width: 1200px) {
   body {
     width: 100%;
-    height: auto;
-    background-color: var(--main-color);
+    background-color: var(--color-black);
   }
   
-  section.plateform_warning {
+  div.plateform_warning {
     width: 100%;
     height: 100%;
     display: flex;
@@ -647,7 +656,7 @@ div.item-langages > p {
   
   i.warning-icon {
     font-size: 250px;
-    color: var(--four-color);
+    color: var(--color-light-green);
   }
   
   p.titre_warning {
@@ -661,15 +670,14 @@ div.item-langages > p {
   }
 }
 
-/* phone screen */
+/* Phone screen */
 @media (max-width: 600px) {
   body {
     width: 100%;
-    height: auto;
-    background-color: var(--main-color);
+    background-color: var(--color-black);
   }
   
-  section.plateform_warning {
+  div.plateform_warning {
     width: 100%;
     height: 100%;
     display: flex;
@@ -680,7 +688,7 @@ div.item-langages > p {
   
   i.warning-icon {
     font-size: 150px;
-    color: var(--four-color);
+    color: var(--color-light-green);
   }
   
   p.titre_warning {
@@ -692,18 +700,4 @@ div.item-langages > p {
   div.content {
     display: none;
   }
-}
-
-/* Barre de défilement */
-::-webkit-scrollbar {
-  width: 12px;
-  scrollbar-color: #888 #f1f1f1;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--seco-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #888;
 }
