@@ -900,7 +900,7 @@ div.item-langages > p {
   }
 
   p.titre {
-    font-size: 7%;
+    font-size: 7px;
   }
   
   p.lien {
@@ -997,5 +997,147 @@ div.item-langages > p {
 
   button.carousel-button > i.bx {
     font-size: 27px;
+  }
+}
+
+/* Laptop screen L */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* div informations personnelles */
+  div.contact {
+    width: 25%;
+    height: 500px;
+    padding-bottom: 0;
+  }
+
+  div.contact_informations {
+    margin-top: -20px;
+    margin-bottom: -20px;
+  }
+
+  div.photo {
+    width: 120px;
+    height: 120px;
+    margin-top: -50px;
+  }
+  
+  h1.nom {
+    margin-bottom: -50px;
+    font-size: 14px;
+  }
+  
+  p.statut {
+    width: 30px;
+    font-size: 7px;
+  }
+
+  p.titre {
+    font-size: 6px;
+  }
+  
+  p.lien {
+    font-size: 7px;
+  }
+
+  div.logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+  }
+
+  a > i.bx, button > i.bx {
+    font-size: 12px;
+  }
+
+  /* div menu ancres */
+  div.menu {
+    height: 30px;
+  }
+
+  div.menu > h4 {
+    font-size: 7px;
+  }
+  
+  /* div a propos de moi */
+  div.about-me {
+    width: 75%;
+  }
+  
+  div.about-me h1 {
+    font-size: 16px;
+  }
+  
+  div.about-me p {
+    font-size: 8px;
+  }
+
+  div.about-me-ligne {
+    width: 26px;
+  }
+  
+  /* div diplômes */
+  div.diplomes {
+    height: 80px;
+    margin-bottom: 42px;
+  }
+
+  div.diplome {
+    margin: 15px;
+  }
+
+  div.diplome h2 {
+    font-size: 8px;
+  }
+
+  div.diplome p {
+    margin: 0;
+    font-size: 6px;
+  }
+
+  div.mention > p {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  
+  /* div compétences */
+  div.competences {
+    height: 290px;
+  }
+
+  div.competence > h3 {
+    font-size: 10px;
+  }
+
+  div.jauge {
+    width: 90px;
+    height: 7px;
+  }
+
+  span.label {
+    font-size: 6px;
+  }
+
+  /* div logiciels et outils */
+  div.logicielsoutils {
+    height: 80px;
+    margin-bottom: 25px;
+  }
+
+  div.logicielsoutils_title_bloc > div {
+    width: 30px;
+  }
+
+  div.logicielsoutils_content > div > img {
+    height: 25px;
+    padding: 8px;
+  }
+
+  /* div réalisations */
+  div.realisations {
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  button.carousel-button > i.bx {
+    font-size: 25px;
   }
 }
