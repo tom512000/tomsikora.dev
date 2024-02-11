@@ -741,21 +741,45 @@ div.item-langages > p {
 }
 
 /* Desktop screen */
-@media (min-width: 1601px) {
+@media (min-width: 1601px) and (max-width: 2559px) {
+  /* div informations personnelles */
+  p.titre {
+    font-size: 10px;
+  }
+  
+  p.lien {
+    font-size: 13px;
+  }
+
+  /* div menu ancres */
+  div.menu > h4 {
+    font-size: 14px;
+  }
+  
+  /* div a propos de moi */
+  div.about-me p {
+    font-size: 17px;
+  }
+  
+  /* div diplômes */
+  div.diplome h2 {
+    font-size: 20px;
+  }
+
+  div.diplome p {
+    font-size: 13px;
+  }
+
+  /* div logiciels et outils */
+  div.logicielsoutils {
+    height: 175px;
+  }
+
+  div.logicielsoutils_content > div > img {
+    height: 60px;
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1600px) {
     
-}
-
-/* Laptop screen */
-@media (min-width: 1201px) and (max-width: 1600px) {
-  
-}
-
-/* Tablet screen */
-@media (max-width: 1200px) {
-  
-}
-
-/* Phone screen */
-@media (max-width: 600px) and (max-width: 1600px) {
-  
 }
