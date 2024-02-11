@@ -628,6 +628,118 @@ div.item-langages > p {
   background-color : var(--color-light-green);
 }
 
+/* Large screen */
+@media (min-width: 2560px) {
+  /* div informations personnelles */
+  div.contact {
+    width: 15%;
+    height: 900px;
+  }
+  
+  div.about-me {
+    width: 85%;
+  }
+
+  div.about-me h1 {
+    font-size: 40px;
+  }
+
+  div.about-me p {
+    font-size: x-large;
+  }
+
+  div.photo {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 0;
+  }
+
+  h1.nom {
+    font-size: 35px;
+    margin-bottom: -20px;
+  }
+
+  p.statut {
+    width: 70px;
+    font-size: large;
+  }
+
+  div.contact_informations {
+    height: 45px;
+  }
+
+  div.logo {
+    width: 47px;
+    height: 47px;
+  }
+
+  a > i.bx, button > i.bx {
+    font-size: 25px;
+  }
+
+  p.titre {
+    font-size: 13px;
+  }
+
+  p.lien {
+    font-size: 17px;
+  }
+
+  p.lien button {
+    font-size: 17px;
+  }
+
+  /* div menu ancres */
+  div.menu > h4 {
+    font-size: x-large;
+  }
+
+  /* div diplômes */
+  div.diplomes {
+    height: 200px;
+  }
+
+  /* div competences */
+  div.competence > h3 {
+    font-size: 25px;
+  }
+
+  div.jauge {
+    height: 20px;
+  }
+
+  span.label {
+    font-size: 18px;
+  }
+
+  /* div logiciels et outils */
+  div.logicielsoutils_content > div {
+    height: 130px;
+  }
+
+  div.logicielsoutils_content > div > img {
+    height: 100px;
+  }
+
+  /* div réalisations */
+  div.realisations {
+    height: 700px;
+    margin-bottom: 50px;
+  }
+
+  div.item-text > h2 {
+    font-size: 50px;
+  }
+
+  div.item-text > p {
+    font-size: 25px;
+  }
+
+  div.item-langages > h3 {
+    font-size: 25px;
+  }
+}
+
 /* Desktop screen */
 @media (min-width: 1601px) {
     
@@ -640,64 +752,10 @@ div.item-langages > p {
 
 /* Tablet screen */
 @media (max-width: 1200px) {
-  body {
-    width: 100%;
-    background-color: var(--color-black);
-  }
   
-  div.plateform_warning {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  i.warning-icon {
-    font-size: 250px;
-    color: var(--color-light-green);
-  }
-  
-  p.titre_warning {
-    font-size: 35px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #a0a0a0;
-  }
-  
-  div.content {
-    display: none;
-  }
 }
 
 /* Phone screen */
-@media (max-width: 600px) {
-  body {
-    width: 100%;
-    background-color: var(--color-black);
-  }
+@media (max-width: 600px) and (max-width: 1600px) {
   
-  div.plateform_warning {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  i.warning-icon {
-    font-size: 150px;
-    color: var(--color-light-green);
-  }
-  
-  p.titre_warning {
-    font-size: 20px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #a0a0a0;
-  }
-  
-  div.content {
-    display: none;
-  }
 }
