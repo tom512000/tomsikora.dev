@@ -780,6 +780,98 @@ div.item-langages > p {
   }
 }
 
+/* Laptop screen M */
 @media (min-width: 1441px) and (max-width: 1600px) {
-    
+  /* div informations personnelles */
+  div.photo {
+    width: 175px;
+    height: 175px;
+  }
+  
+  h1.nom {
+    font-size: 23px;
+  }
+
+  p.statut {
+    font-size: 12px;
+  }
+
+  p.titre {
+    font-size: 10px;
+  }
+  
+  p.lien {
+    font-size: 12px;
+  }
+
+  div.logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  a > i.bx, button > i.bx {
+    font-size: 18px;
+  }
+
+  /* div menu ancres */
+  div.menu {
+    height: 55px;
+  }
+
+  div.menu > h4 {
+    font-size: 14px;
+  }
+  
+  /* div a propos de moi */
+  div.about-me h1 {
+    font-size: 25px;
+  }
+  
+  div.about-me p {
+    font-size: 15px;
+  }
+  
+  /* div diplômes */
+  div.diplomes {
+    height: 125px;
+  }
+
+  div.diplome h2 {
+    font-size: 18px;
+  }
+
+  div.diplome p {
+    font-size: 10.5px;
+  }
+  
+  /* div compétences */
+  div.competence > h3 {
+    font-size: 16px;
+  }
+
+  div.jauge {
+    height: 15px;
+  }
+
+  span.label {
+    font-size: 12.5px;
+  }
+
+  /* div logiciels et outils */
+  div.logicielsoutils {
+    height: 150px;
+  }
+
+  div.logicielsoutils_content > div > img {
+    height: 50px;
+  }
+
+  /* div réalisations */
+  div.realisations {
+    height: 420px;
+  }
+  
+  div.carousel-item > img {
+    width: 80%;
+  }
 }
