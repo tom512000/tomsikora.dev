@@ -372,7 +372,7 @@ div.mention > p {
 div.competences {
   display: flex;
   flex-wrap: wrap;
-  height: 350px;
+  height: 300px;
 }
 
 div.competence {
@@ -435,7 +435,7 @@ span.label {
 /* div logiciels et outils */
 div.logicielsoutils {
   height: 195px;
-  margin-top: 110px;
+  margin-top: 20px;
   margin-bottom: 70px;
 }
 
@@ -1000,7 +1000,7 @@ div.item-langages > p {
   }
 }
 
-/* Laptop screen L */
+/* Laptop screen */
 @media (min-width: 769px) and (max-width: 1024px) {
   /* div informations personnelles */
   div.contact {
@@ -1140,4 +1140,9 @@ div.item-langages > p {
   button.carousel-button > i.bx {
     font-size: 25px;
   }
+}
+
+/* Tablette screen */
+@media (min-width: 426px) and (max-width: 768px) {
+  
 }
