@@ -26,13 +26,17 @@ En parallèle de mes études, je travaille sur la **création de sites web** et 
 ![Linux](https://img.shields.io/badge/-Linux-333333?style=flat&logo=linux&logoColor=FCC624)
 ![Docker](https://img.shields.io/badge/-Docker-333333?style=flat&logo=docker&logoColor=2496ED)
 ![Oracle](https://img.shields.io/badge/-Oracle-333333?style=flat&logo=oracle&logoColor=F80000)
+![Dart](https://img.shields.io/badge/-Dart-333333?style=flat&logo=dart&logoColor=0175C2)
 
 ## 💾 Logiciels
 ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-333333?style=flat&logo=visual-studio-code&logoColor=007ACC)
 ![PhpStorm](https://img.shields.io/badge/-PhpStorm-333333?style=flat&logo=phpstorm&logoColor=B800CC)
 ![PyCharm](https://img.shields.io/badge/-PyCharm-333333?style=flat&logo=pycharm&logoColor=00CC52)
-![Jupyter](https://img.shields.io/badge/-Jupyter-333333?style=flat&logo=jupyter&logoColor=orange)
+![JupyterHub](https://img.shields.io/badge/-JupyterHub-333333?style=flat&logo=jupyter&logoColor=orange)
 ![Qt Creator](https://img.shields.io/badge/-Qt_Creator-333333?style=flat&logo=qt&logoColor=41CD52)
+![Flutter](https://img.shields.io/badge/-Flutter-333333?style=flat&logo=flutter&logoColor=02569B)
+![Android Studio](https://img.shields.io/badge/-Android_Studio-333333?style=flat&logo=android-studio&logoColor=3DDC84)
+![Cisco Packet Tracer](https://img.shields.io/badge/-Cisco_Packet_Tracer-333333?style=flat&logo=cisco&logoColor=1BA0D7)
 ![Trello](https://img.shields.io/badge/-Trello-333333?style=flat&logo=trello&logoColor=007ACC)
 ![Figma](https://img.shields.io/badge/-Figma-333333?style=flat&logo=figma&logoColor=CC0014)
 ![PenPot](https://img.shields.io/badge/-Penpot-333333?style=flat&logo=penpot&logoColor=000000)
