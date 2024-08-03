@@ -1,1148 +1,580 @@
 /*
-  Projet : Portfolio numérique
-  Description : Portfolio numérique de Tom SIKORA
-  Version : 3.0
-  Auteur : Tom SIKORA
+! tailwindcss v3.4.7 | MIT License | https://tailwindcss.com
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap');
 
 /*
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-family: 'Aoboshi One', serif;
-  font-family: 'Righteous', cursive;
-  font-family: 'Jost', sans-serif;
-  font-family: 'DM Sans', sans-serif;
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
-/* CSS global */
-:root {
-  --color-black: #171717; /* Couleur 1 : Noir */
-  --color-dark-gray: #303031; /* Couleur 2 : Gris foncé */
-  --color-light-gray: #414141; /* Couleur 3 : Gris clair */
-  --color-light-green: #9DE62F; /* Couleur 4 : Vert clair */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
 }
 
-* {
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-feature-settings: normal;
+  /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  letter-spacing: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
   margin: 0;
   padding: 0;
 }
 
-img {
-  pointer-events: none;
-  user-select: none;
+legend {
+  padding: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
-/* CSS Éléments */
-html {
-  width: 100%;
-  scroll-behavior: smooth;
-  cursor: grab;
-}
-
-body {
-  margin: 4% 4% 4% 4%;
-  background-color: var(--color-black);
-}
-
-/* Barre de défilement */
-::-webkit-scrollbar {
-  width: 12px;
-  scrollbar-color: #888 #f1f1f1;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--color-dark-gray);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #888;
-}
-
-/* div warning plateforme */
-div.plateform_warning {
-  display: none;
-}
-
-/* div contenu principal */
-div.content {
-  display: flex;
-  width: 100%;
-}
-
-/* div informations personnelles */
-div.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 20%;
-  height: 800px;
-  margin-right: 25px;
-  padding-top: 50px;
-  padding-bottom: 20px;
-  background-color: var(--color-dark-gray);
-}
-
-div.bord {
-  border: 1px solid var(--color-light-gray);
-  border-radius: 20px;
-}
-
-div.photo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 200px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  color: white;
-  background: linear-gradient(#595959, #515151);
-  margin-bottom: -20px;
-}
-
-div.photo > img {
-  width: 65%;
-  height: 100%;
-  transform: scaleX(-1);
-}
-
-h1.nom {
-  font-family: 'Righteous', cursive;
-  color: white;
-  letter-spacing: 2px;
-  margin-bottom: -40px;
-}
-
-p.statut {
-  width: 50px;
-  font-family: 'Aoboshi One', serif;
-  color: white;
-  font-size: small;
-  padding: 2px 15px 2px 15px;
-  border-radius: 5px;
-  background-color: #434344;
-}
-
-div.ligne {
-  border: 1px solid #414142;
-  width: 80%;
-}
-
-div.contact_informations {
-  display: flex;
-  align-items: center;
-  width: 80%;
-  height: 20px;
-  transition: all 0.5s ease-in-out;
-}
-
-div.contact_informations:hover {
-  transform: translateX(5px);
-}
-
-a > i.bx, button > i.bx {
-  font-size: 22px;
-  color: var(--color-light-green);
-}
-
-div.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: linear-gradient(#262627, #515151);
-}
-
-div.logo a, div.logo > button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-div.logo > button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-div.logo:hover {
-  border: 1px solid #3a3a3a;
-  background-color: var(--color-black);
-}
-
-div.texte {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-  padding-left: 5%;
-}
-
-p.titre {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  color: #a0a0a0;
-  font-size: x-small;
-}
-
-p.lien {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  color: white;
-  font-weight: 800;
-}
-
-p.lien button {
-  padding: 1px 7px 1px 7px;
-  margin-top: 4px;
-  border: none;
-  border-radius: 20px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  background-color : var(--color-light-green);
-  cursor: pointer;
-}
-
-/* div A propos de moi */
-div.about-me h1, div.about-me p, 
-  div.about-me-ligne, div.diplomes,
-  div.competences, div.logicielsoutils {
-  margin-left: 35px;
-  margin-right: 35px;
-}
-
-div.about-me {
-  width: 80%;
-  background-color: var(--color-dark-gray);
-}
-
-div.about-me h1 {
-  font-family: 'Righteous', cursive;
-  color: white;
-  letter-spacing: 2px;
-  margin-top: 35px;
-}
-
-div.about-me p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: larger;
-  text-align: justify;
-  color: #A9A9A9;
-}
-
-div.about-me p a {
-  color: var(--color-light-green);
-}
-
-div.about-me-ligne {
-  border: 3px solid var(--color-light-green);
-  width: 40px;
-  border-radius: 3px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* div menu ancres */
-div.menu {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 50%;
-  height: 70px;
-  float: right;
-  border-radius: 0 20px 0 20px;
-  font-family: 'Jost', sans-serif;
-  color: #A9A9A9;
-  background-color: var(--color-light-gray);
-}
-
-div.menu > h4 {
-  position: relative;
-}
-
-div.menu > h4::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  border-bottom: 2px solid var(--color-light-green);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-div.menu > h4:hover::after {
-  opacity: 1;
-}
-
-div.menu > h4 > a {
-  text-decoration: none;
-  color: #A9A9A9;
-}
-
-div.menu > h4 > a:hover {
-  color: var(--color-light-green);
-}
-
-/* div diplômes */
-div.diplomes {
-  display: flex;
-  height: 150px;
-  margin-bottom: 75px;
-}
-
-div.diplome {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 30px;
-  border-radius: 20px;
-  background-color: #292929;
-  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.5);
-  transition: transform 1s ease-in-out;
-}
-
-div.diplome:hover {
-  animation: inclinaison 1s ease-in-out 1;
-}
-
-@keyframes inclinaison {
-  0% {
-    transform: rotate(0deg);
-  } 25% {
-    transform: rotate(-2deg);
-  } 75% {
-    transform: rotate(2deg);
-  } 100% {
-    transform: rotate(0deg);
-  }
-}
-
-div.diplome h2 {
-  font-family: 'Jost', sans-serif;
-  letter-spacing: 2px;
-  color: white;
-  cursor: pointer;
-}
-
-div.diplome p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: smaller;
-  color: #A9A9A9;
-}
-
-div.diplome-bloc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-div.mention {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  background-color: var(--color-light-green);
-}
-
-div.mention > p {
-  width: 100%;
-  height: 100%;
-  font-size: large;
-  color: black;
-  font-family: 'Jost', sans-serif;
-}
-
-/* div competences */
-div.competences {
-  display: flex;
-  flex-wrap: wrap;
-  height: 300px;
-}
-
-div.competence {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: calc(100% / 3);
-  height: calc(100% / 4);
-}
-
-div.competence > h3 {
-  font-family: 'Jost', sans-serif;
-  letter-spacing: 2px;
-  color: white;
-}
-
-div.jauge {
-  width: 200px;
-  height: 17px;
-  background-color: #292929;
-  border: 7px solid #292929;
-  position: relative;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-div.niveau {
-  height: 100%;
-  background-color: var(--color-light-green);
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 10px;
-}
-
-div.niveau:hover {
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  } 50% {
-    transform: scale(1.04);
-  } 100% {
-    transform: scale(1);
-  }
-}
-
-span.label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: smaller;
-  font-family: 'Jost', sans-serif;
-  transform: translate(-50%, -50%);
-}
-
-/* div logiciels et outils */
-div.logicielsoutils {
-  height: 195px;
-  margin-top: 20px;
-  margin-bottom: 70px;
-}
-
-div.logicielsoutils_title {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  height: 50%;
-}
-
-div.logicielsoutils_title_bloc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: -35px;
-}
-
-div.logicielsoutils_title_bloc > h1 {
-  margin-bottom: -10px;
-}
-
-div.logicielsoutils_title_bloc > div {
-  width: 80px;
-  margin-bottom: 50px;
-}
-
-div.logicielsoutils_content {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 50%;
-}
-
-div.logicielsoutils_content > div {
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  background-color: var(--color-light-gray);
-}
-
-div.logicielsoutils_content > div > img {
-  height: 80px;
-  padding: 15px;
-}
-
-/* div réalisations */
-div.realisations {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-  margin-bottom: 35px;
-}
-
-/* div carrousel */
-div.carousel {
-  width: 90%;
-  height: 90%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  background-color: #171717;
-}
-
-div.carousel-inner {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-
-button.carousel-button {
-  width: 10%;
-  height: 100%;
-  top: 50%;
-  position: absolute;
-  border: none;
-  background: none;
-  cursor: pointer;
-  z-index: 1;
-  transform: translateY(-50%);
-}
-
-button.carousel-prev {
-  left: 0;
-}
-
-button.carousel-next {
-  right: 0;
-}
-
-button.carousel-button > i.bx {
-  color: #A9A9A9;
-  font-size: 60px;
-}
-
-div.carousel-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  filter: blur(0px);
-}
-
-div.carousel-item > img {
-  height: 100%;
-  position: absolute;
-  transition: filter 0.3s ease;
-}
-
-div.carousel-item:hover > img {
-  filter: blur(6px);
-}
-
-div.carousel-item > div.item-text {
-  display: none;
-  position: absolute;
-}
-
-div.carousel-item:hover > div.item-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-div.item-text > h2 {
-  margin-bottom: 40px;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: bold;
-  font-size: 40px;
-  text-shadow:
-    -1px -1px 1px rgba(0, 0, 0, 0.5),
-    1px -1px 1px rgba(0, 0, 0, 0.5),
-    -1px 1px 1px rgba(0, 0, 0, 0.5),
-    1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-div.item-text > h2 > a {
-  color: white;
-}
-
-div.item-text > h2 > a:hover {
-  color: var(--color-light-green);
-}
-
-div.item-text > p {
-  width: 75%;
+ol,
+ul,
+menu {
+  list-style: none;
   margin: 0;
-  font-size: 22px;
-  text-shadow:
-    -1px -1px 1px rgba(0, 0, 0, 0.5),
-    1px -1px 1px rgba(0, 0, 0, 0.5),
-    -1px 1px 1px rgba(0, 0, 0, 0.5),
-    1px 1px 1px rgba(0, 0, 0, 0.5);
-  color: white;
+  padding: 0;
 }
 
-div.item-langages {
-  display: flex;
-  width: 75%;
-  margin-top: 30px;
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
 }
 
-div.item-langages > h3 {
-  margin-right: 10px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 20px;
-  text-shadow:
-    -1px -1px 1px rgba(0, 0, 0, 0.5),
-    1px -1px 1px rgba(0, 0, 0, 0.5),
-    -1px 1px 1px rgba(0, 0, 0, 0.5),
-    1px 1px 1px rgba(0, 0, 0, 0.5);
-  color: white;
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
 }
 
-div.item-langages > p {
-  margin: 0 15px 0 0;
-  padding: 1px 7px 1px 7px;
-  border: none;
-  border-radius: 20px;
-  font-family: 'Jost', sans-serif;
-  font-size: 18px;
-  color: black;
-  background-color : var(--color-light-green);
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
 }
 
-/* Large screen */
-@media (min-width: 2560px) {
-  /* div informations personnelles */
-  div.contact {
-    width: 15%;
-    height: 900px;
-  }
-  
-  div.about-me {
-    width: 85%;
-  }
-
-  div.about-me h1 {
-    font-size: 40px;
-  }
-
-  div.about-me p {
-    font-size: x-large;
-  }
-
-  div.photo {
-    width: 250px;
-    height: 250px;
-    margin-bottom: 0;
-  }
-
-  h1.nom {
-    font-size: 35px;
-    margin-bottom: -20px;
-  }
-
-  p.statut {
-    width: 70px;
-    font-size: large;
-  }
-
-  div.contact_informations {
-    height: 45px;
-  }
-
-  div.logo {
-    width: 47px;
-    height: 47px;
-  }
-
-  a > i.bx, button > i.bx {
-    font-size: 25px;
-  }
-
-  p.titre {
-    font-size: 13px;
-  }
-
-  p.lien {
-    font-size: 17px;
-  }
-
-  p.lien button {
-    font-size: 17px;
-  }
-
-  /* div menu ancres */
-  div.menu > h4 {
-    font-size: x-large;
-  }
-
-  /* div diplômes */
-  div.diplomes {
-    height: 200px;
-  }
-
-  /* div competences */
-  div.competence > h3 {
-    font-size: 25px;
-  }
-
-  div.jauge {
-    height: 20px;
-  }
-
-  span.label {
-    font-size: 18px;
-  }
-
-  /* div logiciels et outils */
-  div.logicielsoutils_content > div {
-    height: 130px;
-  }
-
-  div.logicielsoutils_content > div > img {
-    height: 100px;
-  }
-
-  /* div réalisations */
-  div.realisations {
-    height: 700px;
-    margin-bottom: 50px;
-  }
-
-  div.item-text > h2 {
-    font-size: 50px;
-  }
-
-  div.item-text > p {
-    font-size: 25px;
-  }
-
-  div.item-langages > h3 {
-    font-size: 25px;
-  }
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
 }
 
-/* Desktop screen */
-@media (min-width: 1601px) and (max-width: 2559px) {
-  /* div informations personnelles */
-  p.titre {
-    font-size: 10px;
-  }
-  
-  p.lien {
-    font-size: 13px;
-  }
+/*
+Set the default cursor for buttons.
+*/
 
-  /* div menu ancres */
-  div.menu > h4 {
-    font-size: 14px;
-  }
-  
-  /* div a propos de moi */
-  div.about-me p {
-    font-size: 17px;
-  }
-  
-  /* div diplômes */
-  div.diplome h2 {
-    font-size: 20px;
-  }
-
-  div.diplome p {
-    font-size: 13px;
-  }
-
-  /* div logiciels et outils */
-  div.logicielsoutils {
-    height: 175px;
-  }
-
-  div.logicielsoutils_content > div > img {
-    height: 60px;
-  }
+button,
+[role="button"] {
+  cursor: pointer;
 }
 
-/* Laptop screen M */
-@media (min-width: 1441px) and (max-width: 1600px) {
-  /* div informations personnelles */
-  div.photo {
-    width: 175px;
-    height: 175px;
-  }
-  
-  h1.nom {
-    font-size: 23px;
-  }
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
 
-  p.statut {
-    font-size: 12px;
-  }
-
-  p.titre {
-    font-size: 10px;
-  }
-  
-  p.lien {
-    font-size: 12px;
-  }
-
-  div.logo {
-    width: 35px;
-    height: 35px;
-  }
-
-  a > i.bx, button > i.bx {
-    font-size: 18px;
-  }
-
-  /* div menu ancres */
-  div.menu {
-    height: 55px;
-  }
-
-  div.menu > h4 {
-    font-size: 14px;
-  }
-  
-  /* div a propos de moi */
-  div.about-me h1 {
-    font-size: 25px;
-  }
-  
-  div.about-me p {
-    font-size: 15px;
-  }
-  
-  /* div diplômes */
-  div.diplomes {
-    height: 125px;
-  }
-
-  div.diplome h2 {
-    font-size: 18px;
-  }
-
-  div.diplome p {
-    font-size: 10.5px;
-  }
-  
-  /* div compétences */
-  div.competence > h3 {
-    font-size: 16px;
-  }
-
-  div.jauge {
-    height: 15px;
-  }
-
-  span.label {
-    font-size: 12.5px;
-  }
-
-  /* div logiciels et outils */
-  div.logicielsoutils {
-    height: 150px;
-  }
-
-  div.logicielsoutils_content > div > img {
-    height: 50px;
-  }
-
-  /* div réalisations */
-  div.realisations {
-    height: 420px;
-  }
-  
-  div.carousel-item > img {
-    width: 80%;
-  }
+:disabled {
+  cursor: default;
 }
 
-/* Laptop screen L */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  /* div informations personnelles */
-  div.contact {
-    width: 25%;
-    height: 650px;
-  }
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
 
-  div.photo {
-    width: 150px;
-    height: 150px;
-  }
-  
-  h1.nom {
-    margin-bottom: -30px;
-    font-size: 20px;
-  }
-  
-  p.statut {
-    width: 40px;
-    font-size: 10px;
-  }
-
-  p.titre {
-    font-size: 7px;
-  }
-  
-  p.lien {
-    font-size: 10px;
-  }
-
-  div.logo {
-    width: 32px;
-    height: 32px;
-  }
-
-  a > i.bx, button > i.bx {
-    font-size: 16px;
-  }
-
-  /* div menu ancres */
-  div.menu {
-    height: 40px;
-  }
-
-  div.menu > h4 {
-    font-size: 9px;
-  }
-  
-  /* div a propos de moi */
-  div.about-me {
-    width: 75%;
-  }
-  
-  div.about-me h1 {
-    font-size: 19px;
-  }
-  
-  div.about-me p {
-    font-size: 11px;
-  }
-
-  div.about-me-ligne {
-    width: 30px;
-  }
-  
-  /* div diplômes */
-  div.diplomes {
-    height: 100px;
-    margin-bottom: 42px;
-  }
-
-  div.diplome {
-    margin: 15px;
-  }
-
-  div.diplome h2 {
-    font-size: 13px;
-  }
-
-  div.diplome p {
-    margin: 0;
-    font-size: 9px;
-  }
-
-  div.mention > p {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-  
-  /* div compétences */
-  div.competence > h3 {
-    font-size: 12px;
-  }
-
-  div.jauge {
-    width: 110px;
-    height: 10px;
-  }
-
-  span.label {
-    font-size: 8px;
-  }
-
-  /* div logiciels et outils */
-  div.logicielsoutils {
-    height: 100px;
-    margin-bottom: 25px;
-  }
-
-  div.logicielsoutils_content > div > img {
-    height: 28px;
-  }
-
-  /* div réalisations */
-  div.realisations {
-    height: 240px;
-  }
-
-  button.carousel-button > i.bx {
-    font-size: 27px;
-  }
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
 }
 
-/* Laptop screen */
-@media (min-width: 769px) and (max-width: 1024px) {
-  /* div informations personnelles */
-  div.contact {
-    width: 25%;
-    height: 500px;
-    padding-bottom: 0;
-  }
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
 
-  div.contact_informations {
-    margin-top: -20px;
-    margin-bottom: -20px;
-  }
-
-  div.photo {
-    width: 120px;
-    height: 120px;
-    margin-top: -50px;
-  }
-  
-  h1.nom {
-    margin-bottom: -50px;
-    font-size: 14px;
-  }
-  
-  p.statut {
-    width: 30px;
-    font-size: 7px;
-  }
-
-  p.titre {
-    font-size: 6px;
-  }
-  
-  p.lien {
-    font-size: 7px;
-  }
-
-  div.logo {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-  }
-
-  a > i.bx, button > i.bx {
-    font-size: 12px;
-  }
-
-  /* div menu ancres */
-  div.menu {
-    height: 30px;
-  }
-
-  div.menu > h4 {
-    font-size: 7px;
-  }
-  
-  /* div a propos de moi */
-  div.about-me {
-    width: 75%;
-  }
-  
-  div.about-me h1 {
-    font-size: 16px;
-  }
-  
-  div.about-me p {
-    font-size: 8px;
-  }
-
-  div.about-me-ligne {
-    width: 26px;
-  }
-  
-  /* div diplômes */
-  div.diplomes {
-    height: 80px;
-    margin-bottom: 42px;
-  }
-
-  div.diplome {
-    margin: 15px;
-  }
-
-  div.diplome h2 {
-    font-size: 8px;
-  }
-
-  div.diplome p {
-    margin: 0;
-    font-size: 6px;
-  }
-
-  div.mention > p {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-  
-  /* div compétences */
-  div.competences {
-    height: 290px;
-  }
-
-  div.competence > h3 {
-    font-size: 10px;
-  }
-
-  div.jauge {
-    width: 90px;
-    height: 7px;
-  }
-
-  span.label {
-    font-size: 6px;
-  }
-
-  /* div logiciels et outils */
-  div.logicielsoutils {
-    height: 80px;
-    margin-bottom: 25px;
-  }
-
-  div.logicielsoutils_title_bloc > div {
-    width: 30px;
-  }
-
-  div.logicielsoutils_content > div > img {
-    height: 25px;
-    padding: 8px;
-  }
-
-  /* div réalisations */
-  div.realisations {
-    height: 180px;
-    margin-bottom: 15px;
-  }
-
-  button.carousel-button > i.bx {
-    font-size: 25px;
-  }
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Tablette screen */
-@media (min-width: 426px) and (max-width: 768px) {
-  
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+.relative {
+  position: relative;
+}
+
+.table {
+  display: table;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.underline {
+  text-decoration-line: underline;
 }
