@@ -28,6 +28,10 @@ module.exports = {
         '2xl': '1536px',
         '3xl': '1600px',
       },
+      fontSize: {
+        'xxs': ['0.625rem', { lineHeight: '0.875rem' }],
+        'xxxs': ['0.5rem', { lineHeight: '0.75rem' }],
+      },
     },
   },
   variants: {},
