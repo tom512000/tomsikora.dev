@@ -36,7 +36,7 @@
     <body class="h-full min-h-screen bg-dark-gray leading-normal">
         <div class="mx-auto w-full max-w-4xl lg:px-8 lg:py-8 lg:my-16 bg-middle-gray-1 flex flex-col overflow-x-hidden backdrop-blur-xl rounded-none lg:rounded-lg selection:bg-light-green selection:text-gray-950">
 
-            <!-- My profile -->
+            <!-- START : My profile -->
             <div class="flex bg-middle-gray-2 transition hover:shadow-xl overflow-hidden rounded-lg text-white">
                 <div class="flex flex-1 flex-col justify-between">
                     <div class="h-full flex flex-col justify-center border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
@@ -49,16 +49,16 @@
                         <p class="font-lexend font-bold lg:text-5xl lsm:text-4xl msm:text-3xl text-2xl">FRONTEND</p>
                         <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 mt-8">
                             <a class="inline-flex h-[38px] w-[38px] items-center justify-center rounded-full bg-light-gray text-xs lsm:text-sm text-gray-100 transition-colors hover:bg-[#e95130] hover:text-white" href="mailto:tom.sikora03@gmail.com">
-                                <i class='bx bx-envelope text-xl'></i>
+                                <i class="bx bx-envelope text-xl"></i>
                             </a>
                             <a class="inline-flex h-[38px] w-[38px] items-center justify-center rounded-full bg-light-gray text-xs lsm:text-sm text-gray-100 transition-colors hover:bg-[#25d366] hover:text-white" href="tel:+33626888379">
-                                <i class='bx bx-phone text-xl'></i>
+                                <i class="bx bx-phone text-xl"></i>
                             </a>
                             <a class="inline-flex h-[38px] w-[38px] items-center justify-center rounded-full bg-light-gray text-xs lsm:text-sm text-gray-100 transition-colors hover:bg-[#0366c3] hover:text-white" href="https://www.linkedin.com/in/tom-sikora-1a5188271/" target="_blank">
-                                <i class='bx bxl-linkedin-square text-xl'></i>
+                                <i class="bx bxl-linkedin-square text-xl"></i>
                             </a>
                             <a class="inline-flex h-[38px] w-[38px] items-center justify-center rounded-full bg-light-gray text-xs lsm:text-sm text-gray-100 transition-colors hover:bg-dark-gray hover:text-white" href="https://github.com/tom512000" target="_blank">
-                                <i class='bx bxl-github text-xl'></i>
+                                <i class="bx bxl-github text-xl"></i>
                             </a>
                         </div>
                     </div>
@@ -67,94 +67,27 @@
                     <img class="h-full w-full object-cover" src="img/photo.png" alt="Photo de Tom SIKORA">
                 </div>
             </div>
+            <!-- END : My profile -->
+
+            <!-- START : About me -->
+            <div class="flex flex-col relative box-border bg-middle-gray-2 transition hover:shadow-xl overflow-hidden rounded-lg text-white mt-8 p-4 lg:scroll-mt-16 lg:p-6">
+                <div class="w-full flex justify-between items-center mb-4">
+                    <p class="font-display font-bold uppercase font-lexend lg:text-xl lsm:text-lg msm:text-base text-sm">À propos de moi</p>
+                    <a href="files/CV_Tom_SIKORA.pdf" target="_blank" type="button" class="py-1.5 px-2.5 flex items-center sm:text-sm text-xs bg-light-green hover:bg-lime-300 text-gray-900 font-dmsans font-bold border-b-4 border-lime-700 hover:border-lime-500 rounded">
+                        <i class="bx bx-cloud-download sm:text-xl text-lg mr-1"></i>
+                        CV (PDF)
+                    </a>
+                </div>
+                <p class="text-justify font-dmsans sm:text-base msm:text-sm text-xs text-gray-300 mb-4">Je m'appelle Tom SIKORA et je suis actuellement étudiant en troisième année de BUT Informatique à l'<a href="https://www.univ-reims.fr/iut-rcc/" target="_blank" class="font-normal text-light-green">IUT Reims-Châlons-Charleville</a>.</p>
+                <p class="text-justify font-dmsans sm:text-base msm:text-sm text-xs text-gray-300 mb-4">Ma passion pour le développement et la programmation m'a naturellement conduit à me spécialiser dans le développement Web Frontend. Cette spécialisation reflète mon intérêt pour le design et l'optimisation des performances des sites web.</p>
+                <p class="text-justify font-dmsans sm:text-base msm:text-sm text-xs text-gray-300">En parallèle de mes études, je m'investis activement dans la création de sites web et de programmes. Ces projets personnels me permettent de mettre en pratique les connaissances acquises en cours, tout en explorant de nouvelles technologies et frameworks.</p>
+            </div>
+            <!-- END : About me -->
 
         </div>
 
-        <!--<div class="content">
-            <div class="contact bord">
-                <div class="photo bord">
-                    <img src="img/photo.png" alt="Photo de Tom SIKORA">
-                </div>
-                <h1 class="nom">Tom SIKORA</h1>
-                <p class="statut">Etudiant</p>
-                <div class="ligne"></div>
-                <div class="contact_informations">
-                    <div class="logo bord">
-                        <a href="mailto:tom.sikora03@gmail.com">
-                            <i class="bx bxs-envelope"></i>
-                        </a>
-                    </div>
-                    <div class="texte">
-                        <p class="titre">MAIL</p>
-                        <p class="lien">
-                            <button onclick="mail(this)">Afficher le mail</button>
-                        </p>
-                    </div>
-                </div>
-                <div class="contact_informations">
-                    <div class="logo bord">
-                        <a href="tel:+33626888379">
-                            <i class="bx bxs-phone"></i>
-                        </a>
-                    </div>
-                    <div class="texte">
-                        <p class="titre">TELEPHONE</p>
-                        <p class="lien">
-                            <button onclick="numero(this)">Afficher le numéro</button>
-                        </p>
-                    </div>
-                </div>
-                <div class="contact_informations">
-                    <div class="logo bord">
-                        <a href="https://www.linkedin.com/in/𝖳𝖮𝖬-𝗦𝗜𝗞𝗢𝗥𝗔-1a5188271" target="_blank">
-                            <i class="bx bxl-linkedin"></i>
-                        </a>
-                    </div>
-                    <div class="texte">
-                        <p class="titre">LINKEDIN</p>
-                        <p class="lien">Mon profil</p>
-                    </div>
-                </div>
-                <div class="contact_informations">
-                    <div class="logo bord">
-                        <a href="https://github.com/tom512000" target="_blank">
-                            <i class="bx bxl-github"></i>
-                        </a>
-                    </div>
-                    <div class="texte">
-                        <p class="titre">GITHUB</p>
-                        <p class="lien">Mon profil</p>
-                    </div>
-                </div>
-                <div class="contact_informations">
-                    <div class="logo bord">
-                        <a href="files/CV_Tom_SIKORA.pdf" target="_blank">
-                            <i class="bx bxs-folder-open"></i>
-                        </a>
-                    </div>
-                    <div class="texte">
-                        <p class="titre">CV</p>
-                        <p class="lien">PDF</p>
-                    </div>
-                </div>
-                <div class="contact_informations">
-                    <div class="logo bord">
-                        <button onclick="printPage()">
-                            <i class='bx bxs-printer'></i>
-                        </button>
-                    </div>
-                    <div class="texte">
-                        <p class="titre">IMPRESSION</p>
-                        <p class="lien">PDF</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="about-me bord">
+        <!--<div class="about-me bord">
                 <div class="menu">
-                    <h4>
-                        <a href="#moi">À propos de moi</a>
-                    </h4>
                     <h4>
                         <a href="#diplomes">Diplômes</a>
                     </h4>
@@ -168,13 +101,6 @@
                         <a href="#realisations">Réalisations</a>
                     </h4>
                 </div>
-                <h1 id="moi">À propos de moi</h1>
-                <div class="about-me-ligne"></div>
-                <p>Bonjour ! Je m'appelle Tom SIKORA et je suis actuellement étudiant en 2ème année de BUT Informatique à l'<a href="https://www.univ-reims.fr/iut-rcc/" target="_blank">IUT Reims-Châlons-Charleville</a>.</p>
-                <br>
-                <p>Je suis passionné par le développement et la programmation, j'ai donc choisi de me spécialiser dans le développement Web FrontEnd.</p>
-                <br>
-                <p>En parallèle de mes études, je travaille sur la création de sites web et de programmes. Cela me permet d'appliquer les connaissances acquises en cours et de travailler sur des projets concrets afin d'approfondir mes compétences.</p>
 
                 <h1 id="diplomes">Diplômes</h1>
                 <div class="about-me-ligne"></div>
