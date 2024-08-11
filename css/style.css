@@ -694,8 +694,16 @@ video {
   touch-action: manipulation;
 }
 
-.grid-cols-5 {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -1133,6 +1141,10 @@ video {
 }
 
 @media (min-width: 425px) {
+  .lsm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .lsm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1165,6 +1177,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .sm\:border-l-transparent {
     border-left-color: transparent;
   }
