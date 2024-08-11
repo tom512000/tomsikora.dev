@@ -1,12 +1,13 @@
-// Affiche le mail et le numéro de téléphone
-function numero(x){
-    x.parentNode.innerHTML = "06 26 88 83 79";
-}
-function mail(x){
-    x.parentNode.innerHTML = "tom.sikora03@gmail.com";
-}
+// Managing the progress bar
+window.addEventListener('scroll', function () {
+    const progressBar = document.getElementById('progress-bar');
+    const scrollPosition = window.scrollY;
+    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = (scrollPosition / windowHeight) * 100;
+    progressBar.style.width = scrollPercentage + '%';
+});
 
-// Change de curseur en fonction du clic
+// Change cursor based on click
 const screen = document.querySelector('html');
 screen.addEventListener('mousedown', (event) => {
     if (event.button === 0) {
@@ -17,27 +18,3 @@ screen.addEventListener('mousedown', (event) => {
 screen.addEventListener('mouseup', () => {
     screen.style.cursor = 'grab';
 });
-
-// Gestion du carrousel
-let currentIndex = 0;
-const totalItems = document.querySelectorAll('.carousel-item').length;
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalItems;
-    updateCarousel();
-}
-
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-    updateCarousel();
-}
-
-function updateCarousel() {
-    const translateValue = -currentIndex * 100 + '%';
-    document.querySelector('.carousel-inner').style.transform = 'translateX(' + translateValue + ')';
-}
-
-// Bouton d'impression
-function printPage() {
-    window.print();
-}

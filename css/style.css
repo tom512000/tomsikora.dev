@@ -554,8 +554,24 @@ video {
   --tw-contain-style:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .relative {
   position: relative;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .m-5 {
@@ -626,6 +642,14 @@ video {
   display: none;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
 .h-\[38px\] {
   height: 38px;
 }
@@ -634,20 +658,12 @@ video {
   height: 100%;
 }
 
-.h-20 {
-  height: 5rem;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
 
-.w-20 {
-  width: 5rem;
+.w-0 {
+  width: 0px;
 }
 
 .w-\[38px\] {
@@ -668,10 +684,6 @@ video {
 
 .shrink-0 {
   flex-shrink: 0;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -978,6 +990,15 @@ video {
 
 .duration-200 {
   transition-duration: 200ms;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  /* WebKit */
+  -ms-overflow-style: none;
+  /* Internet Explorer et Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .selection\:bg-light-green *::-moz-selection {
