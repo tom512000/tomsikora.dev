@@ -18,3 +18,29 @@ screen.addEventListener('mousedown', (event) => {
 screen.addEventListener('mouseup', () => {
     screen.style.cursor = 'grab';
 });
+
+// Managing the projects section
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('button[id$="-btn"]');
+
+    function updateDisplay(activeBtn) {
+        buttons.forEach(button => {
+            const isActive = button === activeBtn;
+            button.setAttribute('aria-selected', isActive);
+            button.setAttribute('data-state', isActive ? 'active' : 'inactive');
+            button.setAttribute('tabindex', isActive ? '0' : '-1');
+
+            const sectionId = button.id.replace('-btn', '');
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.style.display = isActive ? 'block' : 'none';
+            }
+        });
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => updateDisplay(button));
+    });
+
+    updateDisplay(document.getElementById('professional-btn'));
+});
