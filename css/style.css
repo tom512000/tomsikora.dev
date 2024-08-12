@@ -956,11 +956,6 @@ video {
   line-height: 2rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -974,11 +969,6 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -1258,14 +1248,14 @@ video {
     line-height: 1.25rem;
   }
 
-  .msm\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
   .msm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .msm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
