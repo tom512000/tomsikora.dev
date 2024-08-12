@@ -603,6 +603,10 @@ video {
   margin-left: 0.25rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -625,10 +629,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
 }
 
 .box-border {
@@ -708,10 +708,6 @@ video {
 
 .shrink-0 {
   flex-shrink: 0;
-}
-
-.cursor-pointer {
-  cursor: pointer;
 }
 
 .touch-manipulation {
@@ -980,9 +976,19 @@ video {
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-xxs {
+  font-size: 0.625rem;
+  line-height: 0.875rem;
 }
 
 .text-xxxs {
@@ -1251,11 +1257,26 @@ video {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+
+  .msm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .msm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 425px) {
   .lsm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lsm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lsm\:text-4xl {
@@ -1371,6 +1392,11 @@ video {
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .lg\:text-5xl {
