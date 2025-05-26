@@ -7,3 +7,9 @@
     -ms-overflow-style: none;  /* Internet Explorer et Edge */
     scrollbar-width: none;     /* Firefox */
 }
+
+img {
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
