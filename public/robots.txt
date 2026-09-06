@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tomsikora.dev/sitemap.xml
+Sitemap: https://portfolio.tomsikora.dev/sitemap.xml

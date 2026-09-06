@@ -1,6 +1,6 @@
 # tomsikora.dev
 
-Portfolio de **Tom SIKORA**, développeur web full stack — [tomsikora.dev](https://tomsikora.dev)
+Portfolio de **Tom SIKORA**, développeur web full stack — [tomsikora.dev](https://portfolio.tomsikora.dev)
 
 Application statique React, bilingue (FR / EN) et bi-thème (clair / sombre).
 
