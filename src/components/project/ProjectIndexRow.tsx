@@ -130,7 +130,7 @@ export function ProjectIndexRow({ project, index, isOpen, onToggle }: ProjectInd
                     alt={t('work.screenshotOf', { project: name })}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 size-full object-cover object-left-top"
+                    className="absolute inset-0 size-full object-cover object-top"
                   />
                 </div>
               )}
