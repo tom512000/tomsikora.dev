@@ -1,0 +1,199 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+/* Le thème est piloté par [data-theme] sur <html>, jamais par prefers-color-scheme :
+   la préférence explicite de l'utilisateur (ou le défaut light) est seule maîtresse. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme inline {
+  /* ── Couleurs : uniquement des rôles ────────────────────────────────── */
+  --color-bg: var(--bg);
+  --color-bg-veil: var(--bg-veil);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-ink: var(--fg);
+  --color-ink-2: var(--fg-2);
+  --color-ink-3: var(--fg-3);
+
+  --color-brand: var(--brand);
+  --color-brand-fg: var(--brand-fg);
+  --color-accent: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-line: var(--accent-line);
+  --color-accent-halo: var(--accent-halo);
+
+  /* ── Typographie ────────────────────────────────────────────────────── */
+  --font-sans:
+    'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:
+    'Geist Mono Variable', ui-monospace, 'SFMono-Regular', 'Cascadia Mono', 'Liberation Mono',
+    monospace;
+
+  /* ── Rayons : volontairement courts, plafonnés à 14px ───────────────── */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-2xl: 14px;
+  --radius-3xl: 14px;
+  --radius-4xl: 14px;
+
+  /* ── Élévation ──────────────────────────────────────────────────────── */
+  --shadow-xs: var(--elev-xs);
+  --shadow-sm: var(--elev-sm);
+  --shadow-md: var(--elev-md);
+  --shadow-lg: var(--elev-lg);
+  --shadow-xl: var(--elev-lg);
+  --shadow-2xl: var(--elev-lg);
+
+  /* ── Courbes d'animation ────────────────────────────────────────────── */
+  --ease-out-quart: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--line);
+    /* `transition-colors` de Tailwind anime aussi `outline-color`. Sans cette
+       valeur par défaut, l'anneau de focus partirait de `currentColor` et se
+       colorerait en 150 ms — un indicateur de focus doit être immédiat. En le
+       posant en amont, seul `outline-style` change, ce qui est instantané. */
+    outline-color: var(--focus);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* Compense l'en-tête collant pour toutes les ancres. */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--brand);
+    color: var(--brand-fg);
+  }
+
+  /* Un seul anneau de focus dans tout le projet, visible sur les deux thèmes. */
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Chiffres tabulaires partout où des données sont alignées. */
+  time,
+  [data-numeric] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  abbr[title] {
+    text-decoration: underline dotted;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+    cursor: help;
+  }
+
+  /* Transition de thème : active uniquement pendant le basculement, et
+     seulement sur des propriétés peu coûteuses. Voir ThemeProvider. */
+  :root[data-theme-switching] *,
+  :root[data-theme-switching] *::before,
+  :root[data-theme-switching] *::after {
+    transition:
+      background-color 160ms var(--ease-out-quart),
+      border-color 160ms var(--ease-out-quart),
+      color 160ms var(--ease-out-quart),
+      fill 160ms var(--ease-out-quart) !important;
+    transition-delay: 0ms !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    :root[data-theme-switching] *,
+    :root[data-theme-switching] *::before,
+    :root[data-theme-switching] *::after {
+      transition: none !important;
+    }
+  }
+}
+
+@layer components {
+  /* ── Hiérarchie typographique centralisée ───────────────────────────────
+     Fluide par clamp() : une seule déclaration tient de 320px au grand
+     écran, ce qui évite d'empiler cinq utilitaires de taille par titre. */
+
+  .type-display {
+    font-size: clamp(2.125rem, 1.15rem + 4.9vw, 4.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+
+  .type-h2 {
+    font-size: clamp(1.5rem, 1.1rem + 2vw, 2.375rem);
+    line-height: 1.08;
+    letter-spacing: -0.027em;
+    font-weight: 600;
+  }
+
+  .type-h3 {
+    font-size: clamp(1.125rem, 0.98rem + 0.7vw, 1.4375rem);
+    line-height: 1.2;
+    letter-spacing: -0.018em;
+    font-weight: 600;
+  }
+
+  .type-lead {
+    font-size: clamp(1rem, 0.94rem + 0.32vw, 1.1875rem);
+    line-height: 1.6;
+    letter-spacing: -0.008em;
+  }
+
+  .type-body {
+    font-size: 0.9375rem;
+    line-height: 1.68;
+    letter-spacing: -0.003em;
+  }
+
+  /* Étiquette technique monospace — la brique typographique signature. */
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Trame technique : grille pointillée très basse, décor non sémantique. */
+  .grid-veil {
+    background-image: radial-gradient(var(--grid-line) 1px, transparent 1px);
+    background-size: 22px 22px;
+    background-position: -1px -1px;
+  }
+
+  /* Filet horizontal qui s'estompe sur les bords — sépare les sections. */
+  .rule-fade {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line) 10%, var(--line) 90%, transparent);
+  }
+}
