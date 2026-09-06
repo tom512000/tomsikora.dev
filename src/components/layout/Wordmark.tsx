@@ -10,7 +10,7 @@ export function Wordmark({ className }: { className?: string }) {
   return (
     <a
       href="#profil"
-      aria-label="Tom SIKORA — tomsikora.dev"
+      aria-label="Tom SIKORA — portfolio.tomsikora.dev"
       className={cn(
         'group text-ink inline-flex items-center gap-2.5 rounded-sm transition-colors duration-150',
         className,
@@ -26,7 +26,7 @@ export function Wordmark({ className }: { className?: string }) {
         TS
       </span>
       <span aria-hidden="true" className="hidden text-sm font-medium tracking-tight sm:inline">
-        tomsikora
+        portfolio.tomsikora
         <span className="text-ink-3 group-hover:text-accent transition-colors duration-150">
           .dev
         </span>
