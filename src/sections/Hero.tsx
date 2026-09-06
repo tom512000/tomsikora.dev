@@ -77,7 +77,7 @@ export function Hero() {
               <ul className="flex items-center gap-1.5">
                 {socials
                   .map((social) => {
-                    const Icon = SOCIAL_ICONS[social.id as keyof typeof SOCIAL_ICONS]
+                    const Icon = SOCIAL_ICONS[social.id]
 
                     return (
                       <li key={social.id}>
