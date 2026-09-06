@@ -111,9 +111,9 @@ export function Hero() {
             className="lg:col-span-5"
           >
             <div className="border-line bg-surface overflow-hidden rounded-lg border shadow-sm">
-              <div className="border-line flex items-center justify-between border-b px-4 py-2.5">
+              <div className="border-line flex items-center justify-between gap-3 border-b px-4 py-2.5">
                 <span className="label-mono text-ink-3">{t('hero.specsTitle')}</span>
-                <span aria-hidden="true" className="label-mono text-accent">
+                <span aria-hidden="true" className="label-mono text-accent hidden min-[375px]:inline">
                   portfolio.tomsikora.dev
                 </span>
               </div>
