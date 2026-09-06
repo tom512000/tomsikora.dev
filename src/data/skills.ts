@@ -1,7 +1,8 @@
 import type { Skill, SkillGroup } from '@/lib/types'
 
 /**
- * Les 78 technologies du portfolio d'origine, dans les mêmes cinq groupes.
+ * Les 68 technologies du portfolio d'origine, dans les mêmes cinq groupes,
+ * plus celles ajoutées depuis.
  *
  * `core: true` reprend exactement les entrées marquées « Favoris » (bordure
  * verte) dans l'ancien portfolio. Ce marquage vient de Tom, pas d'une
@@ -9,13 +10,12 @@ import type { Skill, SkillGroup } from '@/lib/types'
  * un core stack mis en avant, le reste en appui.
  */
 const languages: readonly Skill[] = [
-  { name: 'HTML', logo: 'html', href: 'https://developer.mozilla.org/fr/docs/Web/HTML', core: true },
-  { name: 'CSS', logo: 'css', href: 'https://developer.mozilla.org/fr/docs/Web/CSS', core: true },
+  { name: 'HTML', logo: 'html', href: 'https://developer.mozilla.org/fr/docs/Web/HTML' },
+  { name: 'CSS', logo: 'css', href: 'https://developer.mozilla.org/fr/docs/Web/CSS' },
   {
     name: 'JavaScript',
     logo: 'javascript',
     href: 'https://developer.mozilla.org/fr/docs/Web/JavaScript',
-    core: true,
   },
   { name: 'TypeScript', logo: 'typescript', href: 'https://www.typescriptlang.org/', core: true },
   { name: 'PHP', logo: 'php', href: 'https://www.php.net/' },
@@ -24,6 +24,7 @@ const languages: readonly Skill[] = [
   { name: 'C++', logo: 'cpp', href: 'https://isocpp.org/' },
   { name: 'Go', logo: 'go', href: 'https://go.dev/' },
   { name: 'Dart', logo: 'dart', href: 'https://dart.dev/' },
+  { name: 'F#', logo: 'fsharp', href: 'https://fsharp.org/' },
   { name: 'SQL', logo: 'sql', href: 'https://sql.sh/' },
   { name: 'PL/SQL', logo: 'pl-sql', href: 'https://www.oracle.com/fr/database/technologies/appdev/plsql.html' },
   { name: 'NoSQL', logo: 'nosql', href: 'https://aws.amazon.com/fr/nosql/' },
@@ -61,7 +62,7 @@ const databases: readonly Skill[] = [
 const tools: readonly Skill[] = [
   { name: 'VS Code', logo: 'vscode', href: 'https://code.visualstudio.com/', core: true },
   { name: 'GitHub', logo: 'github', href: 'https://github.com/', core: true },
-  { name: 'Figma', logo: 'figma', href: 'https://www.figma.com/', core: true },
+  { name: 'Figma', logo: 'figma', href: 'https://www.figma.com/' },
   { name: 'PhpStorm', logo: 'phpstorm', href: 'https://www.jetbrains.com/phpstorm/' },
   { name: 'WebStorm', logo: 'webstorm', href: 'https://www.jetbrains.com/webstorm/' },
   { name: 'PyCharm', logo: 'pycharm', href: 'https://www.jetbrains.com/pycharm/' },

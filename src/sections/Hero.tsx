@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { ArrowDown, Download, Mail } from 'lucide-react'
+import { ArrowDown, Download, Mail, Phone } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcon'
 import { motion, useReducedMotion } from 'motion/react'
 import { cn } from '@/lib/cn'
@@ -11,7 +11,6 @@ import { useI18n } from '@/i18n/useI18n'
 import { Container } from '@/components/layout/Container'
 import { LinkButton } from '@/components/ui/LinkButton'
 import { Section } from '@/components/ui/Section'
-import { AvailabilityBadge } from '@/components/ui/AvailabilityBadge'
 import { About } from './About'
 
 const HERO_ITEM = {
@@ -19,7 +18,7 @@ const HERO_ITEM = {
   visible: { opacity: 1, y: 0, transition: transitions.smooth },
 }
 
-const SOCIAL_ICONS = { github: GithubIcon, linkedin: LinkedinIcon, email: Mail } as const
+const SOCIAL_ICONS = { github: GithubIcon, linkedin: LinkedinIcon, email: Mail, phone: Phone } as const
 
 /**
  * Première vue.
@@ -68,17 +67,8 @@ export function Hero() {
               {L(profile.positioning)}
             </motion.p>
 
-            <motion.div variants={HERO_ITEM}>
-              <AvailabilityBadge />
-            </motion.div>
-
             <motion.div variants={HERO_ITEM} className="flex flex-wrap items-center gap-3">
-              <LinkButton href="#projets" variant="primary">
-                {t('hero.ctaProjects')}
-                <ArrowDown aria-hidden="true" className="size-4" strokeWidth={2} />
-              </LinkButton>
-
-              <LinkButton href={profile.cv.href} variant="secondary" external>
+              <LinkButton href={profile.cv.href} external>
                 <Download aria-hidden="true" className="size-4" strokeWidth={1.75} />
                 {t('hero.ctaCv')}
                 <span className="sr-only"> ({t('a11y.newTab')})</span>
@@ -86,7 +76,6 @@ export function Hero() {
 
               <ul className="flex items-center gap-1.5">
                 {socials
-                  .filter((social) => social.id !== 'phone')
                   .map((social) => {
                     const Icon = SOCIAL_ICONS[social.id as keyof typeof SOCIAL_ICONS]
 

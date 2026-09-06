@@ -114,7 +114,7 @@ function ContactRow({ social }: { social: Social }) {
         )}
       </a>
 
-      {social.id === 'email' && <CopyEmailButton value={social.handle} />}
+      {(social.id === 'email' || social.id === 'phone') && <CopyEmailButton value={social.handle} />}
     </div>
   )
 }

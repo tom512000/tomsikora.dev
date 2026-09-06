@@ -61,7 +61,6 @@ export const projects: readonly Project[] = [
     id: 'crestic',
     name: 'CReSTIC',
     category: 'professional',
-    featured: true,
     image: 'crestic',
     context: { fr: 'Stage · CReSTIC', en: 'Internship · CReSTIC' },
     description: {
@@ -78,7 +77,6 @@ export const projects: readonly Project[] = [
     id: 'room-questic',
     name: 'RoomQueSTIC',
     category: 'professional',
-    featured: true,
     image: 'room-questic',
     context: { fr: 'Stage · CReSTIC', en: 'Internship · CReSTIC' },
     description: {
@@ -94,7 +92,6 @@ export const projects: readonly Project[] = [
     id: 'butdle',
     name: 'BUTDLE',
     category: 'personal',
-    featured: true,
     image: 'butdle',
     description: {
       fr: "BUTDLE est un jeu développé en React avec une API PHP/Symfony, où le joueur doit deviner un·e enseignant·e du BUT Informatique de Reims. Le backend gère les données et les différents modes de jeu (journalier, illimité…).",
@@ -173,7 +170,6 @@ export const projects: readonly Project[] = [
     id: 'sae4-01',
     name: 'sae4-01',
     category: 'school',
-    featured: true,
     image: 'sae4-01',
     description: {
       fr: "Application web de gestion des stages et alternances d'une formation : gestion des offres, des inscriptions et des utilisateurs. Le projet est découpé en deux parties, un frontend React et un backend PHP/Symfony.",

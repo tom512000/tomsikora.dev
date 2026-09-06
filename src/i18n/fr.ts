@@ -57,7 +57,6 @@ export const fr = {
   hero: {
     intro: 'Bonjour, moi c’est',
     availableLabel: 'Disponibilité',
-    ctaProjects: 'Voir les projets',
     ctaCv: 'CV (PDF)',
     scrollHint: 'Faire défiler',
     specsTitle: 'Fiche technique',

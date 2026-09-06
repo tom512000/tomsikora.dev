@@ -56,7 +56,6 @@ export const en = {
   hero: {
     intro: 'Hi, I’m',
     availableLabel: 'Availability',
-    ctaProjects: 'See the work',
     ctaCv: 'Résumé (PDF)',
     scrollHint: 'Scroll',
     specsTitle: 'At a glance',

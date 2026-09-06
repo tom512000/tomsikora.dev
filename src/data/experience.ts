@@ -39,7 +39,7 @@ export const experiences: readonly Experience[] = [
       fr: 'Stage de 3ᵉ année de BUT Informatique.',
       en: 'Third-year internship of the BUT Computer Science degree.',
     },
-    relatedProjects: ['andi'],
+    relatedProjects: ['andi', 'leaks'],
   },
   {
     id: 'crestic-stage',
