@@ -20,8 +20,12 @@ export type ProjectLinkKind = 'repository' | 'live'
 export interface ProjectLink {
   kind: ProjectLinkKind
   href: string
-  /** Distingue plusieurs dépôts d'un même projet (front / api…). */
-  label?: string
+  /**
+   * Distingue plusieurs liens d'un même projet. Une chaîne pour un terme
+   * technique identique dans toutes les langues (front, api…), un
+   * LocalizedText dès que le mot appartient à l'interface (Démo / Demo).
+   */
+  label?: string | LocalizedText
 }
 
 export interface Project {

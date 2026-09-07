@@ -91,7 +91,7 @@ export const fr = {
     viewRepository: 'Code source',
     viewLive: 'Site en ligne',
     repositoryOf: 'Dépôt {label} de {project}',
-    liveOf: 'Site en ligne de {project}',
+    liveOf: 'Site en ligne {label} de {project}',
     expand: 'Afficher le détail de {project}',
     collapse: 'Masquer le détail de {project}',
     noScreenshot: 'Pas de capture disponible',

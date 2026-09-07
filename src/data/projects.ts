@@ -33,7 +33,6 @@ export const projects: readonly Project[] = [
     name: 'Projet Leak',
     nameByLocale: { en: 'Leak Project' },
     category: 'professional',
-    featured: true,
     image: 'leaks',
     description: {
       fr: "J'ai développé une application web de recherche de fuites de données, permettant aux utilisateurs de vérifier si leurs informations personnelles ont été compromises. Application présentée lors de la deuxième édition de « Cyber & Moi » à Reims.",
@@ -89,6 +88,58 @@ export const projects: readonly Project[] = [
 
   /* ── Personnels ─────────────────────────────────────────────────────── */
   {
+    id: 'omnitill',
+    name: 'Omnitill',
+    category: 'professional',
+    featured: true,
+    image: 'omnitill',
+    description: {
+      fr: "Caisse enregistreuse web pour commerçants : encaissement tactile avec impression du ticket, catalogue et stocks, fidélité client et statistiques de ventes en temps réel. Des modules s'activent à la demande — plan de salle, statistiques détaillées, prévision de production.",
+      en: 'A web cash register for retailers: touch checkout with receipt printing, product catalogue and stock, customer loyalty and real-time sales figures. Modules switch on as needed — floor plan, detailed statistics, production forecasting.',
+    },
+    stack: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Vite',
+      'PHP',
+      'Symfony',
+      'PostgreSQL',
+      'Docker',
+      'Git',
+    ],
+    links: [
+      { kind: 'live', href: 'https://omnitill.fr/' },
+      { kind: 'live', href: 'https://demo.omnitill.fr/', label: { fr: 'Démo', en: 'Demo' } },
+    ],
+  },
+  {
+    id: 'mova',
+    name: 'Mova',
+    category: 'personal',
+    featured: true,
+    image: 'mova',
+    description: {
+      fr: "Mova transforme un export Letterboxd — des CSV réduits à des slugs, des notes et des dates — en une bibliothèque complète : affiches, casting, durées, genres, statistiques et huit jeux bâtis sur les films réellement vus. Ce qui manque à l'export est reconstitué depuis TMDB en arrière-plan.",
+      en: 'Mova turns a Letterboxd export — CSV files holding nothing but slugs, ratings and dates — into a complete library: posters, cast, runtimes, genres, statistics and eight games built on the films actually watched. What the export leaves out is rebuilt from TMDB in the background.',
+    },
+    stack: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Vite',
+      'PHP',
+      'Symfony',
+      'PostgreSQL',
+      'Docker',
+      'Git',
+    ],
+    links: [
+      { kind: 'repository', href: 'https://github.com/tom512000/mova-app' },
+      { kind: 'live', href: 'https://mova.tomsikora.dev/' },
+    ],
+  },
+  {
     id: 'butdle',
     name: 'BUTDLE',
     category: 'personal',
@@ -118,7 +169,6 @@ export const projects: readonly Project[] = [
     id: 'lamiedouce',
     name: 'La Mie Douce',
     category: 'personal',
-    featured: true,
     image: 'lamiedouce',
     description: {
       fr: "Site web complet pour la boulangerie La Mie Douce à Reims, conçu pour présenter les produits, l'histoire et les valeurs de l'établissement. Il comprend une page d'accueil avec les spécialités de la boulangerie, des pages dédiées aux différents types de produits et une section sur les services personnalisés.",

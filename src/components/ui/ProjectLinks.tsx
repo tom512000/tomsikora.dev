@@ -30,16 +30,16 @@ export function ProjectLinks({
   return (
     <ul className={cn('flex flex-wrap items-center gap-2', className)}>
       {project.links.map((link) => {
+        const label = typeof link.label === 'string' ? link.label : link.label?.[locale]
         const Icon = link.kind === 'repository' ? GithubIcon : ExternalLink
         const accessibleName =
           link.kind === 'repository'
-            ? t('work.repositoryOf', { label: link.label ?? '', project: name })
-            : t('work.liveOf', { project: name })
+            ? t('work.repositoryOf', { label: label ?? '', project: name })
+            : t('work.liveOf', { label: label ?? '', project: name })
 
         const visibleLabel =
-          link.kind === 'repository'
-            ? (link.label ?? t('work.viewRepository'))
-            : t('work.viewLive')
+          label ??
+          (link.kind === 'repository' ? t('work.viewRepository') : t('work.viewLive'))
 
         return (
           <li key={link.href}>
