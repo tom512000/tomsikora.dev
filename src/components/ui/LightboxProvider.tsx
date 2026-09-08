@@ -253,7 +253,7 @@ function Viewer({ image, transform, onTransform, onClose }: ViewerProps) {
         onPointerCancel={endPan}
         onClick={onStageClick}
         className={cn(
-          'grid min-h-0 min-w-0 flex-1 touch-none place-items-center overflow-hidden p-4 sm:p-8',
+          'flex min-h-0 min-w-0 flex-1 touch-none items-center justify-center overflow-hidden p-4 sm:p-8',
           scale === 1 ? 'cursor-zoom-in' : panning ? 'cursor-grabbing' : 'cursor-grab',
         )}
       >
