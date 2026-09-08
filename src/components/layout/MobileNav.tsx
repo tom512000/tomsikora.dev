@@ -1,11 +1,11 @@
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useRef, type ReactNode } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { X } from 'lucide-react'
 import { cn } from '@/lib/cn'
 import { transitions } from '@/lib/motion'
 import { SECTION_IDS, type SectionId } from '@/lib/types'
 import { useI18n } from '@/i18n/useI18n'
-import { useLockBodyScroll } from '@/hooks/useLockBodyScroll'
+import { useModalDialog } from '@/hooks/useModalDialog'
 import { LocaleToggle } from '@/components/ui/LocaleToggle'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
@@ -17,8 +17,6 @@ const NAV_KEYS = {
   evenements: 'nav.evenements',
   contact: 'nav.contact',
 } as const satisfies Record<SectionId, `nav.${SectionId}`>
-
-const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
 interface MobileNavProps {
   open: boolean
@@ -40,47 +38,9 @@ interface MobileNavProps {
  */
 export function MobileNav({ open, activeId, onClose }: MobileNavProps) {
   const panelRef = useRef<HTMLDivElement>(null)
-  const previouslyFocused = useRef<HTMLElement | null>(null)
   const { t } = useI18n()
 
-  useLockBodyScroll(open)
-
-  useEffect(() => {
-    if (!open) return
-
-    previouslyFocused.current = document.activeElement as HTMLElement | null
-    panelRef.current?.focus()
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        event.preventDefault()
-        onClose()
-        return
-      }
-
-      if (event.key !== 'Tab' || panelRef.current === null) return
-
-      const focusables = Array.from(panelRef.current.querySelectorAll<HTMLElement>(FOCUSABLE))
-      const first = focusables[0]
-      const last = focusables.at(-1)
-      if (first === undefined || last === undefined) return
-
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault()
-        last.focus()
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault()
-        first.focus()
-      }
-    }
-
-    document.addEventListener('keydown', onKeyDown)
-
-    return () => {
-      document.removeEventListener('keydown', onKeyDown)
-      previouslyFocused.current?.focus()
-    }
-  }, [open, onClose])
+  useModalDialog(panelRef, open, onClose)
 
   return (
     <AnimatePresence>
