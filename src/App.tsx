@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollProgress } from '@/components/layout/ScrollProgress'
 import { SkipLink } from '@/components/layout/SkipLink'
+import { LightboxProvider } from '@/components/ui/LightboxProvider'
 import { Hero } from '@/sections/Hero'
 import { Work } from '@/sections/Work'
 import { Stack } from '@/sections/Stack'
@@ -17,6 +18,9 @@ import { Contact } from '@/sections/Contact'
  * `prefers-reduced-motion` est traité : Motion neutralise alors toutes les
  * animations de transformation et ne conserve que les fondus. Les composants
  * n'ont donc pas à s'en préoccuper individuellement.
+ *
+ * `LightboxProvider` est à l'intérieur pour la même raison : la visionneuse
+ * s'anime avec Motion, elle doit hériter du même réglage.
  */
 export function App() {
   const { locale, t } = useI18n()
@@ -25,20 +29,22 @@ export function App() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <SkipLink />
-      <ScrollProgress />
-      <Header />
+      <LightboxProvider>
+        <SkipLink />
+        <ScrollProgress />
+        <Header />
 
-      <main>
-        <Hero />
-        <Work />
-        <Stack />
-        <Path />
-        <Events />
-        <Contact />
-      </main>
+        <main>
+          <Hero />
+          <Work />
+          <Stack />
+          <Path />
+          <Events />
+          <Contact />
+        </main>
 
-      <Footer />
+        <Footer />
+      </LightboxProvider>
     </MotionConfig>
   )
 }

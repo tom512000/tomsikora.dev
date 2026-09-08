@@ -28,6 +28,19 @@ export const en = {
     preferences: 'Display preferences',
   },
 
+  lightbox: {
+    title: 'Image viewer',
+    open: 'Enlarge image: {image}',
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    zoomValue: '{value}%',
+    flipHorizontal: 'Flip horizontally',
+    flipVertical: 'Flip vertically',
+    reset: 'Reset view',
+    download: 'Download image',
+    close: 'Close viewer',
+  },
+
   theme: {
     label: 'Theme',
     light: 'Light',

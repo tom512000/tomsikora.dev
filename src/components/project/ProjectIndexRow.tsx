@@ -6,6 +6,7 @@ import { EASE_OUT, transitions } from '@/lib/motion'
 import type { Project } from '@/lib/types'
 import { projectName } from '@/data/projects'
 import { useI18n } from '@/i18n/useI18n'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { Chip } from '@/components/ui/Chip'
 import { ProjectLinks } from '@/components/ui/ProjectLinks'
 
@@ -125,12 +126,12 @@ export function ProjectIndexRow({ project, index, isOpen, onToggle }: ProjectInd
 
               {project.image !== undefined && (
                 <div className="border-line bg-surface-2 relative aspect-[16/10] w-full overflow-hidden rounded-md border sm:w-56">
-                  <img
+                  <ZoomableImage
                     src={`/img/projects/${project.image}-640.webp`}
+                    full={`/img/projects/${project.image}-1280.webp`}
+                    downloadName={`${project.image}.webp`}
                     alt={t('work.screenshotOf', { project: name })}
-                    loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 size-full object-cover object-top"
+                    className="object-cover object-top"
                   />
                 </div>
               )}

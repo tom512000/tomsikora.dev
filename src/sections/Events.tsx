@@ -3,6 +3,7 @@ import { cn } from '@/lib/cn'
 import type { ItEvent } from '@/lib/types'
 import { events } from '@/data/events'
 import { useI18n } from '@/i18n/useI18n'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { Container } from '@/components/layout/Container'
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { RevealGroup, RevealItem } from '@/components/ui/Reveal'
@@ -46,14 +47,14 @@ function EventCard({ event }: { event: ItEvent }) {
   return (
     <article className="border-line bg-surface grid overflow-hidden rounded-lg border md:grid-cols-[16rem_1fr] lg:grid-cols-[20rem_1fr]">
       <div className="bg-surface-3 border-line relative aspect-[16/10] border-b md:aspect-auto md:border-r md:border-b-0">
-        <img
+        <ZoomableImage
           src={`/img/events/${event.image}-600.webp`}
           srcSet={`/img/events/${event.image}-600.webp 600w, /img/events/${event.image}-1200.webp 1200w`}
           sizes="(min-width: 1024px) 20rem, (min-width: 768px) 16rem, 100vw"
+          full={`/img/events/${event.image}-1200.webp`}
+          downloadName={`${event.image}.webp`}
           alt={t('events.imageOf', { event: event.name })}
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 size-full object-cover"
+          className="object-cover"
         />
       </div>
 

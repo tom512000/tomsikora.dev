@@ -29,6 +29,19 @@ export const fr = {
     preferences: 'Préférences d’affichage',
   },
 
+  lightbox: {
+    title: 'Visionneuse d’image',
+    open: 'Agrandir l’image : {image}',
+    zoomIn: 'Zoomer',
+    zoomOut: 'Dézoomer',
+    zoomValue: '{value} %',
+    flipHorizontal: 'Retourner horizontalement',
+    flipVertical: 'Retourner verticalement',
+    reset: 'Réinitialiser l’affichage',
+    download: 'Télécharger l’image',
+    close: 'Fermer la visionneuse',
+  },
+
   theme: {
     label: 'Thème',
     light: 'Clair',

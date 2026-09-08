@@ -168,7 +168,11 @@ export function Hero() {
                     alt={t('hero.portraitAlt')}
                     fetchPriority="high"
                     decoding="async"
-                    className="absolute inset-0 size-full object-cover object-top"
+                    draggable={false}
+                    onContextMenu={(event) => {
+                      event.preventDefault()
+                    }}
+                    className="absolute inset-0 size-full object-cover object-top select-none [-webkit-touch-callout:none] [-webkit-user-drag:none]"
                   />
                   <span
                     aria-hidden="true"

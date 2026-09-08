@@ -4,6 +4,7 @@ import { transitions } from '@/lib/motion'
 import type { Project } from '@/lib/types'
 import { projectName } from '@/data/projects'
 import { useI18n } from '@/i18n/useI18n'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { Chip } from '@/components/ui/Chip'
 import { ProjectLinks } from '@/components/ui/ProjectLinks'
 
@@ -67,14 +68,14 @@ export function ProjectShowcase({ project, index }: { project: Project; index: n
       >
         <div aria-hidden="true" className="grid-veil absolute inset-0" />
         {project.image !== undefined ? (
-          <img
+          <ZoomableImage
             src={`/img/projects/${project.image}-1280.webp`}
             srcSet={`/img/projects/${project.image}-640.webp 640w, /img/projects/${project.image}-1280.webp 1280w`}
             sizes="(min-width: 768px) 38rem, 100vw"
+            full={`/img/projects/${project.image}-1280.webp`}
+            downloadName={`${project.image}.webp`}
             alt={t('work.screenshotOf', { project: name })}
-            loading="lazy"
-            decoding="async"
-            className="absolute inset-0 size-full object-cover object-top"
+            className="object-cover object-top"
           />
         ) : (
           <p className="label-mono text-ink-3 absolute inset-0 grid place-items-center">
