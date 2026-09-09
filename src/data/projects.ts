@@ -90,7 +90,7 @@ export const projects: readonly Project[] = [
   {
     id: 'omnitill',
     name: 'Omnitill',
-    category: 'professional',
+    category: 'personal',
     featured: true,
     image: 'omnitill',
     description: {
