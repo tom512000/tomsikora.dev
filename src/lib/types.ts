@@ -59,6 +59,13 @@ export interface Skill {
   name: string
   /** Nom de base du logo dans /img/logos, sans extension. */
   logo: string
+  /**
+   * Marque dont le logo est monochrome, dessiné en noir : il est alors
+   * inversé en thème sombre, faute de quoi le glyphe disparaît sur le fond.
+   * À ne jamais poser sur un logo coloré, dont l’inversion détruirait la
+   * couleur de marque.
+   */
+  mono?: boolean
   href: string
   /** Marqué « Favori » dans le portfolio d'origine → core stack. */
   core?: boolean

@@ -20,7 +20,7 @@ export const experiences: readonly Experience[] = [
     period: { fr: 'juil. 2025 — sept. 2027', en: 'Jul 2025 — Sep 2027' },
     start: '2025-07',
     ongoing: true,
-    relatedProjects: ['andi-espace-client'],
+    relatedProjects: ['andi'],
   },
   {
     id: 'dalven-stage',

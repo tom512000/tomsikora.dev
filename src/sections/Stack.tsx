@@ -109,15 +109,7 @@ function SkillTile({ skill }: { skill: Skill }) {
         'hover:bg-accent-soft transition-colors duration-150',
       )}
     >
-      <img
-        src={`/img/logos/${skill.logo}.webp`}
-        alt=""
-        width={96}
-        height={96}
-        loading="lazy"
-        decoding="async"
-        className="size-7 shrink-0 object-contain"
-      />
+      <SkillLogo skill={skill} className="size-7" />
       <span className="text-ink min-w-0 truncate text-sm font-medium">{skill.name}</span>
       <span className="sr-only"> ({t('a11y.newTab')})</span>
     </a>
@@ -138,17 +130,38 @@ function SkillChip({ skill }: { skill: Skill }) {
         'hover:border-line-strong hover:text-ink transition-colors duration-150',
       )}
     >
-      <img
-        src={`/img/logos/${skill.logo}.webp`}
-        alt=""
-        width={96}
-        height={96}
-        loading="lazy"
-        decoding="async"
-        className="size-4 shrink-0 object-contain opacity-80 transition-opacity duration-150 group-hover:opacity-100"
+      <SkillLogo
+        skill={skill}
+        className="size-4 opacity-80 transition-opacity duration-150 group-hover:opacity-100"
       />
       <span className="text-[0.8125rem]">{skill.name}</span>
       <span className="sr-only"> ({t('a11y.newTab')})</span>
     </a>
+  )
+}
+
+/**
+ * Logo d'une technologie.
+ *
+ * Les marques monochromes — GitHub, Symfony, Next.js, Three.js, shadcn/ui… —
+ * sont dessinées en noir : telles quelles, elles disparaissent sur le fond du
+ * thème sombre. Elles sont donc inversées en sombre, ce qui donne exactement
+ * la variante claire prévue par ces marques et préserve les évidements, là où
+ * un masque teinté aplatirait le glyphe en silhouette pleine.
+ *
+ * Les logos colorés ne sont jamais touchés : l'inversion détruirait leur
+ * couleur de marque.
+ */
+function SkillLogo({ skill, className }: { skill: Skill; className?: string }) {
+  return (
+    <img
+      src={`/img/logos/${skill.logo}.webp`}
+      alt=""
+      width={96}
+      height={96}
+      loading="lazy"
+      decoding="async"
+      className={cn('shrink-0 object-contain', skill.mono === true && 'dark:invert', className)}
+    />
   )
 }
