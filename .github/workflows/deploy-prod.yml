@@ -58,11 +58,32 @@ jobs:
 
       - name: Deploy
         run: |
-          tar -C dist -czf - . | \
-          ssh \
-            -o BatchMode=yes \
-            -T \
-            ubuntu@vps-93991c4a.vps.ovh.net
+          # L'archive passe par un fichier plutôt que par un tube : une
+          # tentative interrompue peut alors être rejouée à l'identique, là
+          # où un tube obligerait à reconstruire l'archive et masquerait le
+          # code de sortie de ssh derrière un SIGPIPE de tar.
+          tar -C dist -czf "$RUNNER_TEMP/dist.tar.gz" .
+
+          for attempt in 1 2 3 4 5; do
+            if ssh \
+              -o BatchMode=yes \
+              -o ConnectTimeout=15 \
+              -o ServerAliveInterval=15 \
+              -o ServerAliveCountMax=4 \
+              -T \
+              ubuntu@vps-93991c4a.vps.ovh.net < "$RUNNER_TEMP/dist.tar.gz"
+            then
+              echo "Deployed on attempt $attempt"
+              exit 0
+            fi
+
+            delay=$((attempt * 10))
+            echo "Attempt $attempt failed, retrying in ${delay}s"
+            sleep "$delay"
+          done
+
+          echo "Deploy failed after 5 attempts"
+          exit 1
 
       - name: Verify production
         run: |
